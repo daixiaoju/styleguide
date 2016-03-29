@@ -1799,11 +1799,11 @@ md-card {
   display: none;
   margin-top: 10px; }
 
-.wfm-time-range-picker-wrap .ng-invalid.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
-  display: block; }
+.wfm-time-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
+  display: block !important; }
 
-.wfm-time-range-picker-wrap .ng-invalid.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
-  display: block; }
+.wfm-time-range-picker-wrap.ng-invalid.ng-invalid-parse .error-msg-container.ng-invalid-parse {
+  display: block !important; }
 
 .pagination li {
   display: inline-block;

@@ -156,6 +156,37 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/time-range-picker/time-range-picker.tpl.html',
+    "<div>\n" +
+    "    <table>\n" +
+    "\t<tr>\n" +
+    "\t    <td><ng-transclude></ng-transclude></td>\n" +
+    "\t    <td><timepicker-wrap ng-model=\"startTime\"></timepicker-wrap></td>\n" +
+    "\t    <td><i class=\"mdi mdi-minus\"> </i> </td>\n" +
+    "\t    <td><timepicker-wrap ng-model=\"endTime\"></timepicker-wrap></td>\n" +
+    "\t    <td>\n" +
+    "\t\t<div class=\"next-day-toggle\"  ng-show=\"!disableNextDay || nextDay\" >\n" +
+    "\t\t    <button class=\"wfm-btn wfm-btn-invis-default\"\n" +
+    "\t\t\t    ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\"\n" +
+    "\t\t\t    ng-click=\"toggleNextDay()\">\n" +
+    "\t\t\t{{ nextDay ? \"+ 1\" : \"+ 0\"}}\n" +
+    "\t\t    </button>\n" +
+    "\t\t</div>\n" +
+    "\t    </td>\n" +
+    "\t</tr>\n" +
+    "    </table>\n" +
+    "</div>\n" +
+    "<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\">\n" +
+    "    <i class=\"mdi mdi-alert-octagon\"></i>\n" +
+    "    <span translate>EndTimeMustBeGreaterOrEqualToStartTime</span>\n" +
+    "</div> \t\t\n" +
+    "<div class=\"error-msg-container ng-invalid-parse alert-error notice-spacer\">\n" +
+    "    <i class=\"mdi mdi-alert-octagon\"></i>\n" +
+    "    <span translate>StartTimeAndEndTimeMustBeSet</span>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/workinghourspicker/working-hours-picker.tpl.html',
     "<div class=\"row toolbar\">\n" +
     "\t<div class=\"wfm-block\">\n" +
@@ -208,8 +239,8 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\t\t</ul>\n" +
     "\n" +
     "\t\t<div class=\"wfm-block\">\n" +
-    "\t\t\t<time-range-picker start-time=\"newWorkingPeriodStartTime\" end-time=\"newWorkingPeriodEndTime\" disable-next-day=\"disableNextDay\">\n" +
-    "\t\t\t\t<button type=\"button\" class=\"wfm-fab mini success\" ng-click=\"addEmptyWorkingPeriod(newWorkingPeriodStartTime, newWorkingPeriodEndTime)\">\n" +
+    "\t\t\t<time-range-picker ng-model=\"newWorkingPeriod\"  disable-next-day=\"disableNextDay\">\n" +
+    "\t\t\t\t<button type=\"button\" class=\"wfm-fab mini success\" ng-click=\"addEmptyWorkingPeriod()\">\n" +
     "\t\t\t\t\t<i class=\"mdi mdi-plus\"></i>\n" +
     "\t\t\t\t\t<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>\n" +
     "\t\t\t\t</button>\n" +
