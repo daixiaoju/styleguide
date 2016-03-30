@@ -1573,6 +1573,72 @@ Additionally a menu can not trigger a child menu from within itself.</p>
       </div>
 
       </section>
+      <section id="kssref-1-14-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.14.1</span
+          >Mini Confirmation modal
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.</p>
+<p>Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-default">Do something dangerous</button>
+<div ng-cloak class="modal-box">
+	<div ng-cloak ng-show="confirmModal1">
+		<div class="modalbg">
+			<div class="dialog-mini">
+				<div class="modal-inner-content">
+					Are you sure you want to do the thing?
+				</div>
+				<div class="modal-actions">
+					<aside>
+						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
+						<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button ng-click=&#x27;confirmModal1=true&#x27; class=&quot;wfm-btn wfm-btn-default&quot;&gt;Do something dangerous&lt;/button&gt;
+&lt;div ng-cloak class=&quot;modal-box&quot;&gt;
+	&lt;div ng-cloak ng-show=&quot;confirmModal1&quot;&gt;
+		&lt;div class=&quot;modalbg&quot;&gt;
+			&lt;div class=&quot;dialog-mini&quot;&gt;
+				&lt;div class=&quot;modal-inner-content&quot;&gt;
+					Are you sure you want to do the thing?
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-actions&quot;&gt;
+					&lt;aside&gt;
+						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Cancel&lt;/button&gt;
+						&lt;button ng-click=&quot;confirmModal1=false&quot; class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Apply&lt;/button&gt;
+					&lt;/aside&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
       <section id="kssref-1-15" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
