@@ -290,13 +290,24 @@
 <div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
 <div ng-show="showjs">
     <code><pre>
-var data = [];
-for (var i = 0; i &lt; 100; i++) {
-    data[i] = {};
-    for (var j = 0; j &lt; 10; j++) {
-    data[i][&#39;j&#39; + j] = j;
-    }
-}
+c3.generate({
+    bindto: &#39;#myChart&#39;,
+    data: {
+            columns: [
+                [&#39;data1&#39;, 30, 200, 100, 400, 150, 250],
+                [&#39;data2&#39;, 20, 180, 240, 100, 190, 0],
+            ],
+            selection: {
+                    enabled: true,
+            },
+    },
+    subchart: {
+            show: true,
+    },
+    zoom: {
+            enabled: true,
+    },
+});
     </pre></code>
 </div>
 </div>
