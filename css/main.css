@@ -53,6 +53,7 @@
     border-color: transparent; }
   .wfm-datepicker .btn-default {
     border-color: transparent !important;
+    color: rgba(0, 0, 0, 0.87);
     background: #ffffff; }
   .wfm-datepicker .btn-info.active {
     background-color: #99d6ff !important;
