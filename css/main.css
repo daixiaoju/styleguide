@@ -191,6 +191,7 @@ h3 {
 
 body {
   background-color: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.87);
   font-size: 14px !important;
   overflow-x: hidden;
   font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif !important; }
@@ -199,9 +200,6 @@ body {
     outline: none !important;
     outline: 0px auto -webkit-focus-ring-color !important;
     outline-offset: 0px; }
-
-table {
-  border-spacing: 0 !important; }
 
 button, input, select {
   font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif !important; }
@@ -240,10 +238,6 @@ dd {
 .wfm-block, .angular-ui-tree-handle, .wfm-radio, .wfm-checkbox, .wfm-accordion-content, .wfm-accordion-subheader {
   padding: 5px;
   width: 100%; }
-
-.material-block-content {
-  padding: 5px;
-  vertical-align: middle; }
 
 .layout-container {
   width: 100%;
@@ -304,6 +298,25 @@ dd {
     flex-wrap: nowrap; }
   .con-flex {
     flex: 1; } }
+
+@media screen and (max-width: 768px) {
+  .con-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+  .con-flex {
+    flex: 1 1 auto; } }
+
+.flex-element-fill {
+  flex: 1 1 auto;
+  align-self: stretch; }
+
+.flex-element {
+  flex: 0 0 auto; }
+
+.flex-column {
+  display: flex;
+  flex-direction: column; }
 
 .tree {
   max-height: 800px;
@@ -862,6 +875,8 @@ md-slider.md-min .md-thumb:after {
   .navbar a {
     text-decoration: none;
     display: inline-block; }
+  .navbar i {
+    color: #ffffff; }
   .navbar .brand {
     color: #ffffff !important;
     font-weight: bold;
@@ -1083,6 +1098,9 @@ md-slider.md-min .md-thumb:after {
   animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-play-state: running; }
+
+table {
+  border-spacing: 0 !important; }
 
 .wfm-table {
   width: 100%;
