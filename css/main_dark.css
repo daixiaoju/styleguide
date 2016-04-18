@@ -1902,28 +1902,23 @@ md-card {
 .working-hours-picker .list-item-container .wfm-checkbox {
   padding: 0; }
 
-.alert-error {
+.notice-error {
   background-color: #ee8f7d;
   border: none;
   border-radius: 0; }
 
-.alert-success {
+.notice-success {
   background-color: #627b32;
   border: none;
   border-radius: 0; }
 
-.alert-info {
+.notice-info {
   background-color: #136fac;
   border: none;
   border-radius: 0; }
 
-.alert-warning {
+.notice-warning {
   background-color: #ffc285;
-  border: none;
-  border-radius: 0; }
-
-.alert-detail {
-  background-color: #303030;
   border: none;
   border-radius: 0; }
 
@@ -1938,26 +1933,15 @@ md-card {
   padding: 5px;
   margin-bottom: 0;
   padding: 10px;
-  cursor: pointer;
   vertical-align: middle;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
   .notice-container > .notice-item .mdi {
     vertical-align: middle;
     color: #6b6b6b; }
 
-.notice-item .close {
-  text-shadow: none;
-  opacity: 1;
-  position: relative;
-  float: right;
-  background: 0 0;
-  border: 0;
-  color: #d1d1d1;
-  padding: 0; }
-
-.notice-container > button {
-  border: none;
-  outline: none; }
+.notice-close {
+  padding-left: 5px;
+  cursor: pointer; }
 
 .notice-container > .notice-item.ng-enter,
 .notice-container > .notice-item.ng-leave {
@@ -1965,17 +1949,6 @@ md-card {
   -moz-transition: 0.5s all ease-in-out;
   -o-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out; }
-
-.notice-container > .notice-item.ng-enter,
-.notice-container > .notice-item.ng-leave.ng-leave-active {
-  opacity: 0; }
-
-.notice-container > .notice-item.ng-leave,
-.notice-container > .notice-item.ng-enter.ng-enter-active {
-  opacity: 1; }
-
-.notice-container > div.notice-item {
-  background-repeat: no-repeat; }
 
 @keyframes notice-enter {
   from {
@@ -1989,7 +1962,3 @@ md-card {
   margin: 5px 0;
   animation-name: notice-enter;
   animation-duration: 0.5s; }
-
-@media screen and (max-width: 960px) {
-  wfm-notice {
-    left: 1%; } }
