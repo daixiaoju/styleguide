@@ -1937,7 +1937,7 @@ md-card {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
   .notice-container > .notice-item .mdi {
     vertical-align: middle;
-    color: #6b6b6b; }
+    color: rgba(255, 255, 255, 0.87) !important; }
 
 .notice-close {
   padding-left: 5px;
