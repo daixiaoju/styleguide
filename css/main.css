@@ -1602,6 +1602,13 @@ md-content.md-default-theme {
   margin-right: 10px !important;
   margin-left: 5px !important; }
 
+.command-panel-content {
+  background-color: #ffffff !important;
+  color: rgba(0, 0, 0, 0.87); }
+
+.command-panel-option {
+  background-color: #ffffff; }
+
 md-progress-linear .md-bar {
   background-color: #E91E63 !important; }
 
