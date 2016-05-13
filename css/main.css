@@ -8,7 +8,7 @@
 .line-center {
   text-align: center; }
 
-.cursor-pointer, .pointer {
+.cursor-pointer, .pointer, .wfm-chip {
   cursor: pointer; }
 
 .show {
@@ -1969,3 +1969,25 @@ md-card {
   margin: 5px 0;
   animation-name: notice-enter;
   animation-duration: 0.5s; }
+
+.wfm-chip .chip-text {
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.06);
+  margin-right: 5px; }
+
+.wfm-chip .chip-handle {
+  padding: 5px;
+  background: #99d6ff; }
+
+.wfm-chip .chip-success {
+  background: #c2e085 !important; }
+
+.wfm-chip .chip-warning {
+  background: #ffc285 !important; }
+
+.wfm-chip .chip-error {
+  background: #ee8f7d !important; }
+
+.wfm-chip-wrap {
+  display: inline-block;
+  margin: 10px 0; }

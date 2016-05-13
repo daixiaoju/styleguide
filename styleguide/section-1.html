@@ -106,13 +106,13 @@
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-8">
                 <span class="kss-nav__ref">1.8</span
-                ><span class="kss-nav__name">Switch</span>
+                ><span class="kss-nav__name">Buttons</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-8">
                 <span class="kss-nav__ref">1.8</span
-                ><span class="kss-nav__name">Buttons</span>
+                ><span class="kss-nav__name">Switch</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -173,6 +173,12 @@
               <a href="section-1.html#kssref-1-18">
                 <span class="kss-nav__ref">1.18</span
                 ><span class="kss-nav__name">Cards</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-19">
+                <span class="kss-nav__ref">1.19</span
+                ><span class="kss-nav__name">Chips</span>
               </a>
             </li>
         </ul>
@@ -716,6 +722,27 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.8</span
+          >Buttons
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
+For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a></p>
+<p>Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-1-8" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.8</span
           >Switch
         </a>
       </h2>
@@ -751,27 +778,6 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
 	&lt;/label&gt;
 &lt;/div&gt;</code></pre>
       </div>
-
-      </section>
-      <section id="kssref-1-8" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.8</span
-          >Buttons
-        </a>
-      </h2>
-
-
-      <div class="kss-description">
-        <p>When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
-For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a></p>
-<p>Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.</p>
-
-      </div>
-    </div>
-
 
       </section>
       <section id="kssref-1-8-1" class="kss-section kss-section--depth-3">
@@ -2027,6 +2033,174 @@ The mini spinner can be shown along side any element or in a header to indicate 
 	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
 	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-19" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.19</span
+          >Chips
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Chips are used to build horizontal lists of items. They consists of an indicator and a string to give more information.
+The indicator can have warning classes to show severity or a short category text.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="wfm-chip-wrap">
+  <span class="wfm-chip">
+    <span class="chip-handle">
+      Size
+    </span>
+    <span class="chip-text">Small</span>
+  </span>
+
+  <span class="wfm-chip">
+    <span class="chip-handle">
+      <i class="mdi mdi-alert-circle"></i>
+    </span>
+    <span class="chip-text">Medium</span>
+  </span>
+
+  <span class="wfm-chip">
+    <span class="chip-handle chip-success">
+      <i class="mdi mdi-thumb-up"></i>
+    </span>
+    <span class="chip-text">Large</span>
+  </span>
+
+  <span class="wfm-chip">
+    <span class="chip-handle chip-warning">
+      <i class="mdi mdi-alert"></i>
+    </span>
+    <span class="chip-text">Insane</span>
+  </span>
+
+  <span class="wfm-chip">
+    <span class="chip-handle chip-error">
+      <i class="mdi mdi-alert-octagon"></i>
+    </span>
+    <span class="chip-text">Infinite</span>
+  </span>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-chip-wrap&quot;&gt;
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle&quot;&gt;
+      Size
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;Small&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle&quot;&gt;
+      &lt;i class=&quot;mdi mdi-alert-circle&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;Medium&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle chip-success&quot;&gt;
+      &lt;i class=&quot;mdi mdi-thumb-up&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;Large&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle chip-warning&quot;&gt;
+      &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;Insane&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle chip-error&quot;&gt;
+      &lt;i class=&quot;mdi mdi-alert-octagon&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;Infinite&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-19-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.19.1</span
+          >Chips with filter
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Chips can be tied to a filter to hide or show them accordingly. It is possible to reverse the filter so that it filters in matches instead of out unmatched to save space.</p>
+<p>Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item.Name} }</span> in the project.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <label for="inputId" class="input-prepend">
+ <i class="mdi mdi-filter-outline">
+ <md-tooltip>Filter chips</md-tooltip></i>
+ <input type="text" id="inputId" ng-model="chipFilter" placeholder="Filter chips"/>
+</label>
+</br>
+<div class="wfm-chip-wrap" ng-repeat="item in sizes | filter: chipFilter">
+  <span class="wfm-chip">
+    <span class="chip-handle">
+      <span ng-bind="item.Type">Dont use ng-bind here.</span>
+    </span>
+    <span class="chip-text">
+      <span ng-bind="item.Name">Dont use ng-bind here'</span>
+    </span>
+  </span>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label for=&quot;inputId&quot; class=&quot;input-prepend&quot;&gt;
+ &lt;i class=&quot;mdi mdi-filter-outline&quot;&gt;
+ &lt;md-tooltip&gt;Filter chips&lt;/md-tooltip&gt;&lt;/i&gt;
+ &lt;input type=&quot;text&quot; id=&quot;inputId&quot; ng-model=&quot;chipFilter&quot; placeholder=&quot;Filter chips&quot;/&gt;
+&lt;/label&gt;
+&lt;/br&gt;
+&lt;div class=&quot;wfm-chip-wrap&quot; ng-repeat=&quot;item in sizes | filter: chipFilter&quot;&gt;
+  &lt;span class=&quot;wfm-chip&quot;&gt;
+    &lt;span class=&quot;chip-handle&quot;&gt;
+      &lt;span ng-bind=&quot;item.Type&quot;&gt;Dont use ng-bind here.&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;chip-text&quot;&gt;
+      &lt;span ng-bind=&quot;item.Name&quot;&gt;Dont use ng-bind here&#x27;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
       </div>
 
       </section>
