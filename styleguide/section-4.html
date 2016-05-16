@@ -684,6 +684,7 @@ $scope.nextTab = function() {
         <p>Forms are made up of individual inputs that can be validated on interaction and/or on a submit.</p>
 <p>A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections by putting &lt;h2&gt; headers directly after the &lt;dl&gt; tags.</p>
 <p>Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.</p>
+<p>If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started.</p>
 <div class="jsprewrap">
 <div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
 <div ng-show="showjs">
@@ -727,7 +728,7 @@ $scope.reset = function(form) {
       <dl>
         <dd>
           <div class="form-input-wrap">
-            <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId"/></label>
+            <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId" autofocus/></label>
             <div ng-cloak class="animate-input-message" ng-show ="form.$submitted || form.Name.$touched">
             <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Tell me your name</div>
             </div>
@@ -830,7 +831,7 @@ $scope.reset = function(form) {
       &lt;dl&gt;
         &lt;dd&gt;
           &lt;div class=&quot;form-input-wrap&quot;&gt;
-            &lt;label for=&quot;nameId&quot;&gt;Name: &lt;input type=&quot;text&quot; ng-model=&quot;form.name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;&lt;/label&gt;
+            &lt;label for=&quot;nameId&quot;&gt;Name: &lt;input type=&quot;text&quot; ng-model=&quot;form.name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;&lt;/label&gt;
             &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
             &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Tell me your name&lt;/div&gt;
             &lt;/div&gt;
