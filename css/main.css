@@ -1609,6 +1609,9 @@ md-content.md-default-theme {
 .command-panel-option {
   background-color: #ffffff; }
 
+.md-sidenav-right {
+  background: #ffffff; }
+
 md-progress-linear .md-bar {
   background-color: #E91E63 !important; }
 
