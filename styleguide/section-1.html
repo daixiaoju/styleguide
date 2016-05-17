@@ -1047,7 +1047,7 @@ With label
 
 
       <div class="kss-description">
-        <p>Notifications are more global and general compared to notices. They can function more like a actions archive. For more about notifications see the <a href="file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-1.html#/kssref-1-14" >navbar chapter</a>.</p>
+        <p>Notifications are more global and general compared to notices, they also last longer. Eventually they can function more like a actions archive.</p>
 
       </div>
     </div>
@@ -1443,7 +1443,7 @@ Additionally a menu can not trigger a child menu from within itself.</p>
 	</li>
 	<li ng-click="listSelected4 = !listSelected4" class="disabled">
 		<span class="list-item-container">
-			List item with three actions in leave-behind
+			Disabled list items without leave-behind
 		</span>
 		<span ng-cloak ng-show="listSelected4" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
 		<div class="wfm-leave-behind">
@@ -1498,7 +1498,7 @@ Additionally a menu can not trigger a child menu from within itself.</p>
 	&lt;/li&gt;
 	&lt;li ng-click=&quot;listSelected4 = !listSelected4&quot; class=&quot;disabled&quot;&gt;
 		&lt;span class=&quot;list-item-container&quot;&gt;
-			List item with three actions in leave-behind
+			Disabled list items without leave-behind
 		&lt;/span&gt;
 		&lt;span ng-cloak ng-show=&quot;listSelected4&quot; class=&quot;list-dot grow-out&quot;&gt;&lt;b class=&quot;mdi mdi-check list-mark&quot;&gt;&lt;/b&gt;&lt;/span&gt;
 		&lt;div class=&quot;wfm-leave-behind&quot;&gt;
@@ -1920,8 +1920,7 @@ $scope.gridOptions.enableGridMenu = true;
 
 
       <div class="kss-description">
-        <p>The spinner is used to indicate automatic loading in big elements such as tables, lists and views. While it is visible it should be centeted within its container.
-The mini spinner can be shown along side any element or in a header to indicate loading.</p>
+        <p>The spinner is used to indicate automatic loading in big elements such as tables, lists and views.</p>
 
       </div>
     </div>
@@ -2163,10 +2162,10 @@ The indicator can have warning classes to show severity or a short category text
           Example
         </div>
         <div class="kss-modifier__example">
-          <label for="inputId" class="input-prepend">
+          <label for="ChipInputId" class="input-prepend">
  <i class="mdi mdi-filter-outline">
  <md-tooltip>Filter chips</md-tooltip></i>
- <input type="text" id="inputId" ng-model="chipFilter" placeholder="Filter chips"/>
+ <input type="text" id="ChipInputId" ng-model="chipFilter" placeholder="Filter chips"/>
 </label>
 </br>
 <div class="wfm-chip-wrap" ng-repeat="item in sizes | filter: chipFilter">
@@ -2184,10 +2183,10 @@ The indicator can have warning classes to show severity or a short category text
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label for=&quot;inputId&quot; class=&quot;input-prepend&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label for=&quot;ChipInputId&quot; class=&quot;input-prepend&quot;&gt;
  &lt;i class=&quot;mdi mdi-filter-outline&quot;&gt;
  &lt;md-tooltip&gt;Filter chips&lt;/md-tooltip&gt;&lt;/i&gt;
- &lt;input type=&quot;text&quot; id=&quot;inputId&quot; ng-model=&quot;chipFilter&quot; placeholder=&quot;Filter chips&quot;/&gt;
+ &lt;input type=&quot;text&quot; id=&quot;ChipInputId&quot; ng-model=&quot;chipFilter&quot; placeholder=&quot;Filter chips&quot;/&gt;
 &lt;/label&gt;
 &lt;/br&gt;
 &lt;div class=&quot;wfm-chip-wrap&quot; ng-repeat=&quot;item in sizes | filter: chipFilter&quot;&gt;

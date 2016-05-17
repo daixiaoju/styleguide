@@ -594,7 +594,7 @@ select:after {
 /*Form validation*/
 .wfm-form label {
   cursor: pointer !important;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.87);
   display: inline-block !important; }
 
 .wfm-form input, .wfm-form select {
@@ -1364,7 +1364,7 @@ table {
     top: 100%;
     left: 100%;
     margin: -40px 0 0 10px;
-    text-transform: lowercase; }
+    text-transform: initial; }
     .context-menu .context-menu-right:before {
       right: 100%;
       margin-top: 10px; }
@@ -1372,7 +1372,7 @@ table {
     top: 100%;
     left: 50%;
     margin: 10px 0 0 -100px;
-    text-transform: lowercase; }
+    text-transform: initial; }
     .context-menu .context-menu-bottom:before {
       bottom: 100%;
       left: 50%;
@@ -1381,7 +1381,7 @@ table {
     top: 100%;
     right: 100%;
     margin: -40px 10px 0 0;
-    text-transform: lowercase; }
+    text-transform: initial; }
     .context-menu .context-menu-left:before {
       left: 100%;
       margin-top: 10px; }
