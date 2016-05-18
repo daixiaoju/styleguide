@@ -316,8 +316,9 @@ Floating elements live above the main layout (such as context menus) and should 
 
 
       <div class="kss-description">
-        <p>A view header should be the first visible element in your view. It is used to help orientate the user. If needed you can add a global floating action button to it. If you do, it counts towards the limit of action buttons in you view (i.e one).
-The view header is also a uniqe element in the view and not part of any other panel or element.</p>
+        <p>A view header should be the first element in your view to help orientate the user. If needed you can add a global floating action button (fab) to it. If you do, add the class &#39;with-fab&#39; to the header.
+It can also have a description, if so, add the class &#39;with-desc&#39; and a descriptive text in a p tag.</p>
+<p>Note: The view header is a uniqe element in the view and not part of any other panel or element.</p>
 
       </div>
     </div>
@@ -327,7 +328,8 @@ The view header is also a uniqe element in the view and not part of any other pa
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="view-header">
+          <h3>With fab and description</h3>
+<div class="view-header with-fab with-desc">
 	<div class="view-title">
 		<h1><i class="mdi mdi-account"></i> First header title</h1>
 		<p>Optional description of the view goes here.</p>
@@ -338,11 +340,29 @@ The view header is also a uniqe element in the view and not part of any other pa
 		</button>
 	</div>
 </div>
+<h3>With only fab</h3>
+<div class="view-header with-fab">
+	<div class="view-title">
+		<h1><i class="mdi mdi-account"></i> Second header title</h1>
+	</div>
+	<div class="fab-wrapper">
+		<button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
+			<md-tooltip>Add something</md-tooltip>
+		</button>
+	</div>
+</div>
+<h3>Without fab and desc</h3>
+<div class="view-header">
+	<div class="view-title">
+		<h1><i class="mdi mdi-account"></i> Third header title</h1>
+	</div>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;view-header&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h3&gt;With fab and description&lt;/h3&gt;
+&lt;div class=&quot;view-header with-fab with-desc&quot;&gt;
 	&lt;div class=&quot;view-title&quot;&gt;
 		&lt;h1&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt; First header title&lt;/h1&gt;
 		&lt;p&gt;Optional description of the view goes here.&lt;/p&gt;
@@ -351,6 +371,23 @@ The view header is also a uniqe element in the view and not part of any other pa
 		&lt;button class=&quot;wfm-fab  material-depth-1&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;
 			&lt;md-tooltip&gt;Add something&lt;/md-tooltip&gt;
 		&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;With only fab&lt;/h3&gt;
+&lt;div class=&quot;view-header with-fab&quot;&gt;
+	&lt;div class=&quot;view-title&quot;&gt;
+		&lt;h1&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt; Second header title&lt;/h1&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;fab-wrapper&quot;&gt;
+		&lt;button class=&quot;wfm-fab  material-depth-1&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;
+			&lt;md-tooltip&gt;Add something&lt;/md-tooltip&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Without fab and desc&lt;/h3&gt;
+&lt;div class=&quot;view-header&quot;&gt;
+	&lt;div class=&quot;view-title&quot;&gt;
+		&lt;h1&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt; Third header title&lt;/h1&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>

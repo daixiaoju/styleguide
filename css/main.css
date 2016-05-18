@@ -828,6 +828,12 @@ md-slider.md-min .md-thumb:after {
 .view-title {
   width: 90%; }
 
+.with-fab {
+  padding-bottom: 15px; }
+
+.with-desc {
+  padding-bottom: 0; }
+
 .fab-wrapper {
   width: 10%;
   z-index: 99; }
