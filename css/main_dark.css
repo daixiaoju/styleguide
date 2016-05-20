@@ -166,7 +166,7 @@ h3 {
   color: #6f8e32; }
 
 .text-warning {
-  color: #FB8C00; }
+  color: #ea9036; }
 
 .text-danger {
   color: #ee8f7d; }
@@ -1935,7 +1935,7 @@ md-card {
   border-radius: 0; }
 
 .notice-warning {
-  background-color: #ffc285;
+  background-color: #c27c36;
   border: none;
   border-radius: 0; }
 
@@ -1993,7 +1993,7 @@ md-card {
   background: #627b32 !important; }
 
 .wfm-chip .chip-warning {
-  background: #ffc285 !important; }
+  background: #c27c36 !important; }
 
 .wfm-chip .chip-error {
   background: #ee8f7d !important; }
