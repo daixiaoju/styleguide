@@ -534,7 +534,7 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
       <div class="kss-description">
         <p>The select is used to provide many options to the user and make complex selections simpler.</p>
 <p>The first example is a common select.</p>
-<p>The md-select doesnt render correctly in the styleguide but works fine in the project.</p>
+<p>Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.</p>
 
       </div>
     </div>
@@ -544,27 +544,15 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
           Example
         </div>
         <div class="kss-modifier__example">
-          <select>
-	<option value="" disabled selected>Pick a number...</option>
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-</select>
-<md-select ng-model="model" placeholder="Pick an option">
-	<md-option ng-repeat="item in demos" ng-value=""></md-option>
+          <md-select ng-model="model" placeholder="Pick an option">
+	<md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
 </md-select>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;select&gt;
-	&lt;option value=&quot;&quot; disabled selected&gt;Pick a number...&lt;/option&gt;
-	&lt;option&gt;1&lt;/option&gt;
-	&lt;option&gt;2&lt;/option&gt;
-	&lt;option&gt;3&lt;/option&gt;
-&lt;/select&gt;
-&lt;md-select ng-model=&quot;model&quot; placeholder=&quot;Pick an option&quot;&gt;
-	&lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;&quot;&gt;&lt;/md-option&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;md-select ng-model=&quot;model&quot; placeholder=&quot;Pick an option&quot;&gt;
+	&lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
 &lt;/md-select&gt;</code></pre>
       </div>
 
