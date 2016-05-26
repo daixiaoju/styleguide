@@ -640,18 +640,33 @@ select:after {
   opacity: 0; }
 
 .md-select-menu-container {
-  background: #424242 !important; }
+  background: #424242 !important;
+  z-index: 9999; }
   .md-select-menu-container .md-active {
     z-index: 1010; }
 
-md-select.md-default-theme:not([disabled]):focus .md-select-label {
-  border-bottom: #E91E63 1px solid;
-  padding: 0; }
+md-select:not([disabled]):focus .md-select-value {
+  border: none;
+  outline: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #1d5a83; }
 
-md-select-menu md-option:hover {
-  background-color: #555555; }
+.md-select-value :first-child {
+  transform: none !important;
+  -webkit-transform: none !important; }
 
-md-select-menu md-option[selected], md-select-menu md-option[selected]:focus {
+md-select-menu md-select:not([disabled]):focus .md-select-value,
+md-select-menu md-option[selected],
+md-select-menu md-content {
+  color: inherit !important; }
+
+md-select-menu md-option {
+  height: 30px; }
+  md-select-menu md-option:hover {
+    background-color: #555555; }
+
+md-select-menu md-option:focus:not([disabled]):not([selected]),
+md-select-menu md-option[selected], md-select-menu md-select-menu md-option[selected]:focus {
   background-color: #627b32; }
 
 md-select {
@@ -659,36 +674,11 @@ md-select {
   md-select .md-select-label {
     padding: 0;
     height: 21px; }
+  md-select:not([disabled]):focus .md-select-value {
+    color: inherit !important; }
 
-md-option {
-  height: 30px; }
-
-.ui-select {
-  width: 100%;
-  position: relative;
-  /* This is to remove the arrow of select element in IE*/ }
-  .ui-select .bu-caret {
-    position: absolute;
-    right: -8px;
-    top: 4px;
-    pointer-events: none; }
-  .ui-select select::-ms-expand {
-    display: none; }
-  .ui-select select {
-    -webkit-appearance: none;
-    appearance: none; }
-
-@-moz-document url-prefix() {
-  .ui-select .ui-select {
-    border: 1px solid #CCC;
-    border-radius: 4px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden; }
-  .ui-select .ui-select select {
-    width: 110%;
-    background-position: right 30px center !important;
-    border: none !important; } }
+.bu-select {
+  margin-top: -5px; }
 
 md-autocomplete {
   color: #d1d1d1;
@@ -1145,8 +1135,7 @@ table {
     cursor: pointer; }
 
 .ui-grid {
-  border-left: none;
-  border-right: none; }
+  border: none; }
 
 .big-table-wrapper h4 span {
   float: right;
@@ -1622,9 +1611,12 @@ md-progress-linear .md-bar {
   background-color: #E91E63 !important; }
 
 md-progress-linear[md-mode=buffer] .md-dashed:before {
-  background-color: #c5cae9;
   animation: none;
   -webkit-animation: none; }
+
+md-progress-linear .md-container,
+md-progress-linear[md-mode=buffer] {
+  background-color: #303030; }
 
 md-progress-circular .md-inner .md-half-circle {
   border-left-color: #E91E63 !important; }
