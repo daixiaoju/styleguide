@@ -77,67 +77,38 @@
   .wfm-datepicker .range > button {
     background-color: #627b32; }
 
-.wfm-date-range-picker-wrap .inline-datepicker-wrap {
-  display: inline-block;
-  position: relative; }
-  .wfm-date-range-picker-wrap .inline-datepicker-wrap .dropdown-menu {
-    position: absolute;
-    z-index: 100;
-    margin-top: 5px; }
-  .wfm-date-range-picker-wrap .inline-datepicker-wrap .start-date-input + .dropdown-menu {
-    margin-left: -60px; }
-  .wfm-date-range-picker-wrap .inline-datepicker-wrap .end-date-input + .dropdown-menu {
-    margin-right: -60px; }
-
 .wfm-date-range-picker-wrap .pin-down {
   background-color: #303030; }
 
 .wfm-date-range-picker-wrap .popup-control {
-  height: 24px;
-  width: 24px;
-  display: inline-block;
-  text-align: center;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.5s all ease;
-  cursor: pointer; }
+  height: 18px;
+  width: 18px; }
 
 .wfm-date-range-picker-wrap .popup-control:hover {
   background-color: #303030; }
 
-.wfm-date-range-picker-wrap .inline-vertical-fix {
-  position: relative;
-  top: 4px; }
-
 .wfm-date-range-picker-wrap.ng-invalid .popup-control .mdi-calendar {
   color: #D32F2F; }
 
-.wfm-date-range-picker-wrap input {
-  text-align: center;
-  width: 200px; }
-
 .wfm-date-range-picker-wrap input.ng-invalid {
-  border-bottom: 2px solid #D32F2F; }
+  border-bottom: 2px solid #ee8f7d; }
 
 .wfm-date-range-picker-wrap .in-date-range button {
   background-color: #627b32; }
 
-.wfm-date-range-picker-wrap .hor-m-5 {
-  margin-left: 5px;
-  margin-right: 5px; }
+.dropdown-menu {
+  text-align: center; }
 
 .error-msg-container {
   display: none;
-  margin-top: 5px; }
+  margin-top: 5px;
+  background: #ee8f7d; }
 
 .error-msg-container.error-msg-popup-container {
   position: absolute;
   width: 490px; }
 
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty {
-  display: block !important; }
-
+.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty,
 .wfm-date-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
   display: block !important; }
 
@@ -207,10 +178,10 @@ button, input, select {
 dd {
   margin-left: 40px !important; }
 
-.material-depth-1, .wfm-datepicker-wrap, .wfm-date-range-picker-wrap .pin-down, .error-msg-container, .wfm-btn-default, .wfm-btn-primary, .wfm-slide-tabs md-ink-bar, .sidenav-toggle .sidenav-wrapper, .wfm-card {
+.material-depth-1, .wfm-datepicker-wrap, .wfm-date-range-picker-wrap .pin-down, .wfm-btn-default, .wfm-btn-primary, .wfm-slide-tabs md-ink-bar, .sidenav-toggle .sidenav-wrapper, .wfm-card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
-.material-depth-2, .raise:hover, .nav-context-menu [class*="context-menu-"], .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover, .card-context:focus, .context-menu [class*="context-menu-"], .context-menu:focus, .wfm-card-unselected:hover {
+.material-depth-2, .error-msg-container, .raise:hover, .nav-context-menu [class*="context-menu-"], .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover, .card-context:focus, .context-menu [class*="context-menu-"], .context-menu:focus, .wfm-card-unselected:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
 
 .raise {

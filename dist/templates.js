@@ -3,155 +3,86 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div ng-show=\"!displayPopup()\">\n" +
-    "  <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
-    "    <div class=\"sub-header\">\n" +
-    "      <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "  <div class=\"con-row\">\n" +
+    "    <div class=\"con-flex line-center\">\n" +
+    "      <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "        <div class=\"sub-header\">\n" +
+    "          <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "        </div>\n" +
+    "        <uib-datepicker\n" +
+    "        ng-model=\"startDate\"\n" +
+    "        show-weeks=\"true\"\n" +
+    "        custom-class=\"setRangeClass(date, mode)\"\n" +
+    "        min-date=\"dummyMinDate\"\n" +
+    "        class=\"wfm-datepicker\"></uib-datepicker>\n" +
+    "      </div>\n" +
     "    </div>\n" +
-    "    <uib-datepicker\n" +
-    "	    ng-model=\"startDate\"\n" +
-    "	    show-weeks=\"true\"\n" +
-    "	    custom-class=\"setRangeClass(date, mode)\"\n" +
-    "	    min-date=\"dummyMinDate\"\n" +
-    "	    class=\"wfm-datepicker\"></uib-datepicker>  \n" +
-    "  </div>\n" +
-    "  <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
-    "    <div class=\"sub-header\">\n" +
-    "      <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "    <div class=\"con-flex line-center\">\n" +
+    "      <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "        <div class=\"sub-header\">\n" +
+    "          <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "        </div>\n" +
+    "        <uib-datepicker\n" +
+    "        ng-model=\"endDate\"\n" +
+    "        show-weeks=\"true\"\n" +
+    "        custom-class=\"setRangeClass(date, mode)\"\n" +
+    "        min-date=\"dummyMinDate\"\n" +
+    "        class=\"wfm-datepicker\"></uib-datepicker>\n" +
+    "      </div>\n" +
     "    </div>\n" +
-    "    <uib-datepicker\n" +
-    "	    ng-model=\"endDate\"\n" +
-    "	    show-weeks=\"true\"\n" +
-    "	    custom-class=\"setRangeClass(date, mode)\"\n" +
-    "	    min-date=\"dummyMinDate\"\n" +
-    "	    class=\"wfm-datepicker\"></uib-datepicker>  \n" +
     "  </div>\n" +
+    "\n" +
     "  <div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span ng-bind=\"notEqual\"></span>\n" +
     "  </div>\n" +
     "  <div class=\"error-msg-container ng-invalid-empty alert-error notice-spacer\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>\n" +
-    "  </div>  \n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span ng-bind=\"noStart\"></span>\n" +
+    "  </div>\n" +
     "</div>\n" +
     "\n" +
     "<div ng-show=\"displayPopup()\">\n" +
-    "  <label translate class=\"hor-m-5 inline-vertical-fix\">From</label>\n" +
-    "  <div class=\"inline-datepicker-wrap date-range-start-date\">\n" +
-    "    <input class=\"pointer start-date-input\"\n" +
-    "	    type=\"text\"\n" +
-    "	    ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\"\n" +
-    "	    ng-model=\"startDate\"\n" +
-    "	    uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "	    on-open-focus=\"false\"\n" +
-    "	    custom-class=\"setRangeClass(date, mode)\"\n" +
-    "	    show-weeks=\"true\"\n" +
-    "	    is-open=\"dropDownState.showStartDatePicker\"\n" +
-    "	    ng-required=\"true\"\n" +
-    "	    show-button-bar=\"false\"\n" +
-    "	    min-date=\"dummyMinDate\"\n" +
-    "	    close-on-date-selection=\"false\" />\n" +
+    "  <div class=\"con-row\">\n" +
+    "    <div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"onClickShowAllDates()\" ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\n" +
+    "      <i class=\"mdi mdi-calendar\"></i>\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex line-center\">\n" +
+    "      <input id=\"popupFromId\"class=\"date-range-start-date pointer start-date-input\"\n" +
+    "      type=\"text\"\n" +
+    "      ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\"\n" +
+    "      ng-model=\"startDate\"\n" +
+    "      uib-datepicker-popup=\"{{dateFormat}}\"\n" +
+    "      on-open-focus=\"false\"\n" +
+    "      custom-class=\"setRangeClass(date, mode)\"\n" +
+    "      show-weeks=\"true\"\n" +
+    "      is-open=\"dropDownState.showStartDatePicker\"\n" +
+    "      ng-required=\"true\"\n" +
+    "      show-button-bar=\"false\"\n" +
+    "      min-date=\"dummyMinDate\"\n" +
+    "      close-on-date-selection=\"false\" />\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex line-center\">\n" +
+    "      <input id=\"popupToId\" class=\"pointer end-date-input date-range-end-date\"\n" +
+    "      type=\"text\"\n" +
+    "      ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\"\n" +
+    "      ng-model=\"endDate\"\n" +
+    "      uib-datepicker-popup=\"{{dateFormat}}\"\n" +
+    "      on-open-focus=\"false\"\n" +
+    "      show-weeks=\"true\"\n" +
+    "      custom-class=\"setRangeClass(date, mode)\"\n" +
+    "      is-open=\"dropDownState.showEndDatePicker\"\n" +
+    "      ng-required=\"true\"\n" +
+    "      show-button-bar=\"false\"\n" +
+    "      min-date=\"dummyMinDate\"\n" +
+    "      close-on-date-selection=\"false\" />\n" +
+    "    </div>\n" +
     "  </div>\n" +
-    "  <label translate class=\"hor-m-5 inline-vertical-fix\">To</label>\n" +
-    "  <div class=\"inline-datepicker-wrap date-range-end-date\">\n" +
-    "    <input class=\"pointer end-date-input\"\n" +
-    "	    type=\"text\"\n" +
-    "	    ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\"\n" +
-    "	    ng-model=\"endDate\"\n" +
-    "	    uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "	    on-open-focus=\"false\"\n" +
-    "	    show-weeks=\"true\"\n" +
-    "	    custom-class=\"setRangeClass(date, mode)\"\n" +
-    "	    is-open=\"dropDownState.showEndDatePicker\"\n" +
-    "	    ng-required=\"true\"\n" +
-    "	    show-button-bar=\"false\"\n" +
-    "	    min-date=\"dummyMinDate\"\n" +
-    "	    close-on-date-selection=\"false\" />\n" +
-    "  </div>\n" +
-    "  <span class='popup-control'\n" +
-    "	  ng-mouseenter=\"hoverShow=true\"\n" +
-    "	  ng-mouseleave=\"hoverShow=false\"\n" +
-    "	  ng-click=\"onClickShowAllDates()\"\n" +
-    "	  ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\n" +
-    "    <i class=\"mdi mdi-calendar middle inline-vertical-fix\"></i>\n" +
-    "  </span>\n" +
-    "  \n" +
+    "\n" +
     "  <div class=\"error-msg-container error-msg-popup-container ng-invalid-order alert-error notice-spacer\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span ng-bind=\"notEqual\"></span>\n" +
     "  </div>\n" +
     "  <div class=\"error-msg-container error-msg-popup-container ng-invalid-empty alert-error notice-spacer\" ng-if=\"hoverShow\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>\n" +
-    "  </div>  \n" +
-    " \n" +
-    "</div>\n" +
-    "\n" +
-    "\n"
-  );
-
-
-  $templateCache.put('directives/date-range-picker/wfm-date-range-picker.tpl.html',
-    "<div ng-show=\"templateType==='inline'\" class=\"wfm-block clearfix picker-template-inline\">\n" +
-    "	<div ng-class=\"{ 'ng-valid': !isInvalid(), 'ng-invalid': isInvalid(), 'ng-invalid-order': isInvalid('order'), 'ng-invalid-empty': isInvalid('empty')}\">\n" +
-    "		<div class=\"wfm-datepicker-wrap no-boxshadow\">\n" +
-    "			<div class=\"sub-header\">\n" +
-    "				<span translate>From</span> <strong>{{ startDate | date: \"shortDate\" }}</strong>\n" +
-    "				<div class=\"icon-set form-validation-sign datepickerfix\">\n" +
-    "					<i class=\"mdi mdi-check right-sign \"></i>\n" +
-    "					<i class=\"mdi mdi-close wrong-sign\"></i>\n" +
-    "				</div>\n" +
-    "			</div>\n" +
-    "			<datepicker name=\"startDatePicker\" show-weeks=\"true\" class=\"wfm-datepicker datepicker-start-date\" ng-model=\"startDate\" ng-disabled=\"disabled\"\n" +
-    "						custom-class=\"setRangeClass(date, mode)\"></datepicker>\n" +
-    "		</div>\n" +
-    "		<div class=\"wfm-datepicker-wrap no-boxshadow\">\n" +
-    "			<div class=\"sub-header\">\n" +
-    "				<span translate>To</span> <strong>{{ endDate | date: \"shortDate\" }}</strong>\n" +
-    "				<div class=\"icon-set form-validation-sign datepickerfix\">\n" +
-    "					<i class=\"mdi mdi-check right-sign\"></i>\n" +
-    "					<i class=\"mdi mdi-close wrong-sign\"></i>\n" +
-    "				</div>\n" +
-    "			</div>\n" +
-    "			<datepicker show-weeks=\"true\" class=\"wfm-datepicker datepicker-end-date\" ng-model=\"endDate\" ng-disabled=\"disabled\" custom-class=\"setRangeClass(date, mode)\"></datepicker>\n" +
-    "		</div>\n" +
-    "		<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\" ng-if=\"showMessage\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateMustBeEqualToOrEarlierThanEndDate</span></div>\n" +
-    "		<div class=\"error-msg-container ng-invalid-empty alert-error notice-spacer\" ng-if=\"showMessage\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateAndEndDateMustBeSet</span></div>\n" +
-    "	</div>\n" +
-    "</div>\n" +
-    "<div ng-show=\"templateType==='dropdown'\" class=\"inline-block picker-template-dropdown\" >\n" +
-    "	<div ng-class=\"{'ng-valid': !isInvalid(), 'ng-invalid': isInvalid(), 'ng-invalid-order': isInvalid('order'), 'ng-invalid-empty': isInvalid('empty')}\">\n" +
-    "		<span translate class=\"hor-m-5\">From</span>\n" +
-    "		<div class=\"inline-block relative\">\n" +
-    "			<input class=\"pointer start-date-input\"\n" +
-    "				   type=\"text\"\n" +
-    "				   ng-click=\"onClickStartDateInput()\"\n" +
-    "				   ng-model=\"startDate\"\n" +
-    "				   uib-datepicker-popup=\"{{shortDate}}\"\n" +
-    "				   on-open-focus=\"false\"\n" +
-    "				   custom-class=\"setRangeClass(date, mode)\"\n" +
-    "				   show-weeks=\"true\"\n" +
-    "				   is-open=\"dropDownState.showStartDatePicker\"\n" +
-    "				   ng-required=\"true\"\n" +
-    "				   show-button-bar=\"false\"\n" +
-    "				   close-on-date-selection=\"false\" />\n" +
-    "		</div>\n" +
-    "		<span translate class=\"hor-m-5\">To</span>\n" +
-    "		<div class=\"inline-block relative\">\n" +
-    "			<input class=\"pointer end-date-input\"\n" +
-    "				   type=\"text\"\n" +
-    "				   ng-click=\"onClickEndDateInput()\"\n" +
-    "				   ng-model=\"endDate\"\n" +
-    "				   uib-datepicker-popup=\"{{shortDate}}\"\n" +
-    "				   on-open-focus=\"false\"\n" +
-    "				   show-weeks=\"true\"\n" +
-    "				   custom-class=\"setRangeClass(date, mode)\"\n" +
-    "				   is-open=\"dropDownState.showEndDatePicker\"\n" +
-    "				   ng-required=\"true\"\n" +
-    "				   show-button-bar=\"false\"\n" +
-    "				   close-on-date-selection=\"false\" />\n" +
-    "		</div>\n" +
-    "		<span class='pointer iconfix' ng-mouseenter=\"hoverShow=true\" ng-mouseleave=\"hoverShow=false\" ng-click=\"onClickShowAllDates()\"\n" +
-    "			  ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'><i class=\"mdi mdi-calendar middle\"></i></span>\n" +
-    "		<div class=\"error-msg-container invalid-order alert-error notice-spacer\" ng-if=\"hoverShow\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateMustBeEqualToOrEarlierThanEndDate</span></div>\n" +
-    "		<div class=\"error-msg-container invalid-empty alert-error notice-spacer\" ng-if=\"hoverShow\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateAndEndDateMustBeSet</span></div>\n" +
-    "	</div>\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span ng-bind=\"noStart\"></span>\n" +
+    "  </div>\n" +
     "</div>\n"
   );
 

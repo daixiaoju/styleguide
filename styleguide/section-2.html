@@ -260,14 +260,14 @@
         <div class="kss-modifier__example">
           <label>Template type:</label> <select ng-model="dateRangeTemplateType"
        ng-options="option for option in dateRangeTemplateTypes"></select>
-<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label&gt;Template type:&lt;/label&gt; &lt;select ng-model=&quot;dateRangeTemplateType&quot;
        ng-options=&quot;option for option in dateRangeTemplateTypes&quot;&gt;&lt;/select&gt;
-&lt;date-range-picker ng-model=&quot;dateRange&quot; template-type=&quot;dateRangeTemplateType&quot;&gt;&lt;/date-range-picker&gt;</code></pre>
+&lt;date-range-picker must-be-equal-msg=&quot;Start date must be equal to or earlier than the end date.&quot; start-and-end-msg=&quot;Start date and end date must be set&quot; ng-model=&quot;dateRange&quot; template-type=&quot;dateRangeTemplateType&quot;&gt;&lt;/date-range-picker&gt;</code></pre>
       </div>
 
       </section>
