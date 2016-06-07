@@ -242,11 +242,13 @@
 
 
       <div class="kss-description">
-        <p>A directive for specifying a date-only period. It is composed from datepicker with added validation messages. In WFM, the error messages will be translated automatically.</p>
+        <p>A directive for specifying a date-only period. It is composed from datepicker with added validation messages.</p>
 <p><table class="wfm-table"></p>
 <p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
 <p><tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr></p>
-<p><tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
+<p><tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr></p>
+<p><tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {&#39;StartDateMustBeEqualToOrEarlierThanEndDate&#39; | translate} }</td><td>true</td></tr></p>
+<p><tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {&#39;StartDateAndEndDateMustBeSet&#39; | translate} }</td><td>true</td></tr>
 </table>
 </br></p>
 
