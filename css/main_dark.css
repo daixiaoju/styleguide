@@ -97,7 +97,11 @@
   background-color: #627b32; }
 
 .dropdown-menu {
-  text-align: center; }
+  text-align: center;
+  background-color: #424242; }
+
+.popup-control {
+  box-sizing: initial; }
 
 .error-msg-container {
   display: none;
@@ -612,6 +616,9 @@ select:after {
   .md-select-menu-container .md-active {
     z-index: 1010; }
 
+.md-select-menu-container {
+  z-index: 99999; }
+
 md-select:not([disabled]):focus .md-select-value {
   border: none;
   outline: none;
@@ -637,7 +644,7 @@ md-select-menu md-option[selected], md-select-menu md-select-menu md-option[sele
   background-color: #627b32; }
 
 md-select {
-  margin-top: auto; }
+  margin: 0 !important; }
   md-select .md-select-label {
     padding: 0;
     height: 21px; }
@@ -1303,6 +1310,12 @@ table {
 .card-context:focus {
   background: #303030 !important; }
 
+.active-context {
+  background: #303030; }
+
+.active-context i {
+  color: rgba(255, 255, 255, 0.87) !important; }
+
 .context-menu {
   position: relative;
   cursor: pointer;
@@ -1703,6 +1716,10 @@ md-tooltip {
     display: none; }
   .wfm-chart .c3-selected-circle {
     fill: #424242; }
+  .wfm-chart .c3-axis,
+  .wfm-chart .c3-axis-x,
+  .wfm-chart .c3-legend-item {
+    fill: rgba(255, 255, 255, 0.87) !important; }
 
 .card-group {
   display: inline-block;
@@ -1912,6 +1929,7 @@ md-card {
   vertical-align: middle;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
   .notice-container > .notice-item .mdi {
+    margin-right: 5px;
     vertical-align: middle;
     color: rgba(255, 255, 255, 0.87) !important; }
 
