@@ -105,6 +105,7 @@
 
 .error-msg-container {
   display: none;
+  z-index: 999;
   margin-top: 5px;
   background: #ee8f7d; }
 
@@ -1841,6 +1842,7 @@ md-card {
 
 .wfm-time-range-picker-wrap .error-msg-container {
   display: none;
+  z-index: 999;
   margin-top: 10px; }
 
 .wfm-time-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
