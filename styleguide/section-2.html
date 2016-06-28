@@ -33,6 +33,7 @@
 	<script src="../node_modules/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
 	<script src="../node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
 	<script src="../node_modules/angular-translate/dist/angular-translate.min.js"></script>
+	<script src="../node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js"></script>
 	<script src="../vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js"></script>
 	<script src="../vendor/ui-bootstrap-custom-build/timepicker.directive.ext.js"></script>
 	<script src="../vendor/d3/d3.min.js"></script>
@@ -243,14 +244,16 @@
 
       <div class="kss-description">
         <p>A directive for specifying a date-only period. It is composed from datepicker with added validation messages.</p>
-<p><table class="wfm-table"></p>
-<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
-<p><tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr></p>
-<p><tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr></p>
-<p><tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {&#39;StartDateMustBeEqualToOrEarlierThanEndDate&#39; | translate} }</td><td>true</td></tr></p>
-<p><tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {&#39;StartDateAndEndDateMustBeSet&#39; | translate} }</td><td>true</td></tr>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
+<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
+<tr><td>invalid-order-message</td><td>Message shown if dates are in wrong order. Standard use is &#39;StartDateMustBeEqualToOrEarlierThanEndDate&#39;</td><td>false</td></tr>
+<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is &#39;StartDateAndEndDateMustBeSet&#39;</td><td>false</td></tr>
+<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
 </table>
-</br></p>
+
+<p></br></p>
 
       </div>
     </div>
@@ -260,16 +263,48 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <label>Template type:</label> <select ng-model="dateRangeTemplateType"
-       ng-options="option for option in dateRangeTemplateTypes"></select>
-<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+          <label>Template type:</label>
+<md-select ng-model="dateRangeTemplateType" aria-label="templateType">
+  <md-option ng-repeat="option in dateRangeTemplateTypes" ng-value="option">
+	<span ng-bind="option"></span>
+  </md-option>
+</md-select>
+<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators">
+</date-range-picker>
+
+<!--
+  dateRangeCustomValidators = [{
+     key: 'lessThan7Days',
+     message: 'DateRangeMustBeLessThanSevenDays',
+     validate: function(start, end) {
+        return moment(end).diff(moment(start), 'days') <= 7;
+     }
+  }];
+-->
+
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label&gt;Template type:&lt;/label&gt; &lt;select ng-model=&quot;dateRangeTemplateType&quot;
-       ng-options=&quot;option for option in dateRangeTemplateTypes&quot;&gt;&lt;/select&gt;
-&lt;date-range-picker must-be-equal-msg=&quot;Start date must be equal to or earlier than the end date.&quot; start-and-end-msg=&quot;Start date and end date must be set&quot; ng-model=&quot;dateRange&quot; template-type=&quot;dateRangeTemplateType&quot;&gt;&lt;/date-range-picker&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label&gt;Template type:&lt;/label&gt;
+&lt;md-select ng-model=&quot;dateRangeTemplateType&quot; aria-label=&quot;templateType&quot;&gt;
+  &lt;md-option ng-repeat=&quot;option in dateRangeTemplateTypes&quot; ng-value=&quot;option&quot;&gt;
+	&lt;span ng-bind=&quot;option&quot;&gt;&lt;/span&gt;
+  &lt;/md-option&gt;
+&lt;/md-select&gt;
+&lt;date-range-picker ng-model=&quot;dateRange&quot; template-type=&quot;dateRangeTemplateType&quot; custom-validators=&quot;dateRangeCustomValidators&quot;&gt;
+&lt;/date-range-picker&gt;
+
+&lt;!--
+  dateRangeCustomValidators = [{
+     key: &#x27;lessThan7Days&#x27;,
+     message: &#x27;DateRangeMustBeLessThanSevenDays&#x27;,
+     validate: function(start, end) {
+        return moment(end).diff(moment(start), &#x27;days&#x27;) &lt;= 7;
+     }
+  }];
+--&gt;
+</code></pre>
       </div>
 
       </section>

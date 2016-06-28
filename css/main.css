@@ -104,7 +104,6 @@
   box-sizing: initial; }
 
 .error-msg-container {
-  display: none;
   z-index: 999;
   margin-top: 5px;
   background: #ee8f7d; }
@@ -112,10 +111,6 @@
 .error-msg-container.error-msg-popup-container {
   position: absolute;
   width: 490px; }
-
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty,
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
-  display: block !important; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 10px !important;
