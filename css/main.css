@@ -555,7 +555,7 @@ select:after {
   color: rgba(0, 0, 0, 0.26);
   opacity: 1; }
 
-:-ms-input-placeholder {
+input:-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: rgba(0, 0, 0, 0.26); }
 
