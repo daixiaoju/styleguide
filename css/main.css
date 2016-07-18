@@ -1594,19 +1594,19 @@ md-progress-linear .md-container,
 md-progress-linear[md-mode=buffer] {
   background-color: rgba(0, 0, 0, 0.06); }
 
-md-progress-circular .md-inner .md-half-circle {
-  border-left-color: #E91E63 !important; }
-
 md-progress-circular .md-inner .md-left .md-half-circle {
-  border-left-color: #E91E63; }
+  border-left-color: #E91E63;
+  border-top-color: #E91E63; }
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle,
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle,
 md-progress-circular .md-inner .md-gap {
-  border-top-color: #E91E63; }
+  border-top-color: #E91E63;
+  border-bottom-color: #E91E63; }
 
 md-progress-circular .md-inner .md-right .md-half-circle {
-  border-right-color: #E91E63; }
+  border-right-color: #E91E63;
+  border-top-color: #E91E63; }
 
 .animate-show, .wfm-accordion-content {
   opacity: 1; }
