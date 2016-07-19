@@ -178,13 +178,13 @@ button, input, select {
 dd {
   margin-left: 40px !important; }
 
-.material-depth-1, .wfm-datepicker-wrap, .wfm-date-range-picker-wrap .pin-down, .wfm-btn-default, .wfm-btn-primary, .wfm-slide-tabs md-ink-bar, .sidenav-toggle .sidenav-wrapper, .wfm-card {
+.material-depth-1, .wfm-datepicker-wrap, .wfm-date-range-picker-wrap .pin-down, .wfm-btn-default, .wfm-btn-primary, .wfm-slide-tabs md-ink-bar, .sidenav-toggle .sidenav-wrapper, .wfm-grid .list-content, .wfm-card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
-.material-depth-2, .error-msg-container, .raise:hover, .nav-context-menu [class*="context-menu-"], .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover, .card-context:focus, .context-menu [class*="context-menu-"], .context-menu:focus, .wfm-card-unselected:hover {
+.material-depth-2, .error-msg-container, .raise:hover, .wfm-grid .list-content:hover, .nav-context-menu [class*="context-menu-"], .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover, .card-context:focus, .context-menu [class*="context-menu-"], .context-menu:focus, .wfm-card-unselected:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
 
-.raise {
+.raise, .wfm-grid .list-content {
   cursor: pointer;
   transition: 0.2s all ease-in-out; }
 
@@ -1716,6 +1716,37 @@ md-tooltip {
   .wfm-chart .c3-axis-x,
   .wfm-chart .c3-legend-item {
     fill: rgba(255, 255, 255, 0.87) !important; }
+
+.wfm-grid {
+  display: flex;
+  flex-wrap: wrap; }
+  .wfm-grid .grid-card-disabled {
+    background: #303030;
+    pointer-events: none;
+    cursor: not-allowed !important; }
+  .wfm-grid .grid-card, .wfm-grid .grid-card-mini {
+    display: flex;
+    padding: 5px;
+    width: 100%; }
+  @media all and (min-width: 768px) {
+    .wfm-grid .grid-card {
+      width: 50%; }
+    .wfm-grid .grid-card-mini {
+      width: 25%; } }
+  @media all and (min-width: 960px) {
+    .wfm-grid .grid-card {
+      width: 33.33%; }
+    .wfm-grid .grid-card-mini {
+      width: 16.66%; } }
+  .wfm-grid .list-content {
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 100%; }
+  .wfm-grid .list-content span {
+    flex: 1 0 auto;
+    padding-bottom: 5px; }
 
 .card-group {
   display: inline-block;

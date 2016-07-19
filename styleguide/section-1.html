@@ -173,7 +173,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-18">
                 <span class="kss-nav__ref">1.18</span
-                ><span class="kss-nav__name">Cards</span>
+                ><span class="kss-nav__name">Card grid</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -2022,13 +2022,14 @@ $scope.gridOptions.enableGridMenu = true;
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.18</span
-          >Cards
+          >Card grid
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>Cards are used to show a large number of same size content. Providing filters or ways to sort cards is good.</p>
+        <p>Cards are used to show a large number of similar content. Providing filters or ways to sort cards is appreciated.
+Card actions should be triggered on click of the whole card.</p>
 
       </div>
     </div>
@@ -2038,27 +2039,154 @@ $scope.gridOptions.enableGridMenu = true;
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="card-group">
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card wfm-card-disabled" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+          <div class="wfm-grid">
+<div class="grid-card">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;card-group&quot;&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card wfm-card-disabled&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
-	&lt;div class=&quot;wfm-card&quot; tabindex=&quot;0&quot;&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;/div&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-grid&quot;&gt;
+&lt;div class=&quot;grid-card&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-18-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.18.1</span
+          >Mini card grid
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Smaller cards that provide more items on screen at once.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="wfm-grid">
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+<div class="grid-card-mini">
+ <div class="list-content">
+	 <h2>Card header</h2>
+	 <span>Short card tag line</span>
+ </div>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-grid&quot;&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-card-mini&quot;&gt;
+ &lt;div class=&quot;list-content&quot;&gt;
+	 &lt;h2&gt;Card header&lt;/h2&gt;
+	 &lt;span&gt;Short card tag line&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
