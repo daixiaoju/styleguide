@@ -952,10 +952,12 @@ $scope.reset = function(form) {
         <div class="kss-modifier__example">
           <wfm-card-list >
 	<wfm-card ng-repeat="item in items">
-		<card-header>
+		<card-header tabindex="-1">
+     <div tabindex="0">
 			<span><i class="mdi" ng-class="item.title"></i></span>
 				Single card title
 			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+     </div>
 		</card-header>
 		<card-body class="panel">
  			<div class="con-row demo-outline">
@@ -974,10 +976,12 @@ $scope.reset = function(form) {
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list &gt;
 	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
-		&lt;card-header&gt;
+		&lt;card-header tabindex=&quot;-1&quot;&gt;
+     &lt;div tabindex=&quot;0&quot;&gt;
 			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 				Single card title
 			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
 		&lt;/card-header&gt;
 		&lt;card-body class=&quot;panel&quot;&gt;
  			&lt;div class=&quot;con-row demo-outline&quot;&gt;
@@ -1017,10 +1021,12 @@ $scope.reset = function(form) {
         <div class="kss-modifier__example">
           <wfm-card-list multi-select>
 	<wfm-card ng-repeat="item in items">
-		<card-header>
+		<card-header tabindex="-1">
+     <div tabindex="0">
 			<span><i class="mdi" ng-class="item.title"></i></span>
-			Multi card title
+				Multi card title
 			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+     </div>
 		</card-header>
 		<card-body class="panel">
  			<div class="con-row demo-outline">
@@ -1039,10 +1045,12 @@ $scope.reset = function(form) {
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-card-list multi-select&gt;
 	&lt;wfm-card ng-repeat=&quot;item in items&quot;&gt;
-		&lt;card-header&gt;
+		&lt;card-header tabindex=&quot;-1&quot;&gt;
+     &lt;div tabindex=&quot;0&quot;&gt;
 			&lt;span&gt;&lt;i class=&quot;mdi&quot; ng-class=&quot;item.title&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-			Multi card title
+				Multi card title
 			&lt;span class=&quot;chevron&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
 		&lt;/card-header&gt;
 		&lt;card-body class=&quot;panel&quot;&gt;
  			&lt;div class=&quot;con-row demo-outline&quot;&gt;
