@@ -59,6 +59,9 @@ html {
 .angular-req span:before {
   content: "This element require additional angular directives. " !important; }
 
+md-tooltip {
+  position: fixed; }
+
 .swatch-list .blue-500-swatch {
   background: #0099FF !important; }
 
