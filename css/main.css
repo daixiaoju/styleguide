@@ -662,8 +662,25 @@ md-autocomplete {
     display: none; }
   md-autocomplete button md-icon {
     transform: translate3d(-50%, -50%, 0) scale(0.7); }
-  md-autocomplete .md-whiteframe-1dp, md-autocomplete .md-whiteframe-z1 {
-    box-shadow: none; }
+
+.md-whiteframe-1dp, .md-whiteframe-z1 {
+  box-shadow: none; }
+
+.md-virtual-repeat-scroller {
+  background: #ffffff; }
+
+md-autocomplete-parent-scope {
+  color: rgba(0, 0, 0, 0.87); }
+
+.md-autocomplete-suggestions > li {
+  color: rgba(0, 0, 0, 0.87); }
+  .md-autocomplete-suggestions > li:hover {
+    background: rgba(0, 0, 0, 0.06) !important; }
+
+md-autocomplete[disabled] {
+  background: rgba(0, 0, 0, 0.06); }
+  md-autocomplete[disabled] input {
+    cursor: not-allowed !important; }
 
 .wfm-radio input[type='radio'] {
   display: none; }
@@ -982,6 +999,9 @@ md-slider.md-min .md-thumb:after {
   padding: -1px 1px 0 0;
   z-index: 99999;
   text-align: center; }
+
+.nav-item-wrap {
+  text-decoration: none !important; }
 
 .wfm-btn {
   border: none;
@@ -1728,6 +1748,8 @@ md-tooltip {
     display: flex;
     padding: 5px;
     width: 100%; }
+  .wfm-grid a:focus {
+    outline: #0099ff solid 1px !important; }
   @media all and (min-width: 768px) {
     .wfm-grid .grid-card {
       width: 50%; }
@@ -1753,6 +1775,9 @@ md-tooltip {
   width: 100%;
   transition: 1s all ease-in-out; }
 
+.wfm-card-title {
+  outline: 0 solid transparent !important; }
+
 .wfm-card {
   display: block;
   width: auto;
@@ -1766,6 +1791,9 @@ md-tooltip {
   transition: 0.2s all ease-in-out; }
   .wfm-card:hover, .wfm-card:focus {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2) !important; }
+
+.wfm-card-unselected {
+  background: #ffffff; }
 
 .wfm-card-disabled {
   background-color: rgba(0, 0, 0, 0.26); }
