@@ -983,9 +983,6 @@ md-slider.md-min .md-thumb:after {
   z-index: 99999;
   text-align: center; }
 
-.nav-item-wrap {
-  text-decoration: none !important; }
-
 .wfm-btn {
   border: none;
   padding: 10px;
@@ -1731,8 +1728,6 @@ md-tooltip {
     display: flex;
     padding: 5px;
     width: 100%; }
-  .wfm-grid a:focus {
-    outline: #0099ff solid 1px !important; }
   @media all and (min-width: 768px) {
     .wfm-grid .grid-card {
       width: 50%; }
@@ -1758,9 +1753,6 @@ md-tooltip {
   width: 100%;
   transition: 1s all ease-in-out; }
 
-.wfm-card-title {
-  outline: 0 solid transparent !important; }
-
 .wfm-card {
   display: block;
   width: auto;
@@ -1774,9 +1766,6 @@ md-tooltip {
   transition: 0.2s all ease-in-out; }
   .wfm-card:hover, .wfm-card:focus {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2) !important; }
-
-.wfm-card-unselected {
-  background: #ffffff; }
 
 .wfm-card-disabled {
   background-color: rgba(0, 0, 0, 0.26); }
