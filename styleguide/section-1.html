@@ -111,12 +111,6 @@
               </a>
             </li>
             <li class="kss-nav__menu-item">
-              <a href="section-1.html#kssref-1-8">
-                <span class="kss-nav__ref">1.8</span
-                ><span class="kss-nav__name">Switch</span>
-              </a>
-            </li>
-            <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1-9">
                 <span class="kss-nav__ref">1.9</span
                 ><span class="kss-nav__name">Slider</span>
@@ -249,7 +243,7 @@
 
 
       <div class="kss-description">
-        <p>Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but genrally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.</p>
+        <p>Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but generally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.</p>
 
       </div>
     </div>
@@ -268,10 +262,13 @@
 
 
       <div class="kss-description">
-        <p>Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).</p>
-<p>Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
-Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).</p>
-<p>If the element does not have a raised wrapper (i.e panel) and is placed freely on the background it should have a depth value of 1.</p>
+        <p>Material is built on depth (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
+We have 3 &#39;layers&#39;; the background, material layer and the floating layer.</p>
+<p><ul></p>
+<li>Background layer: Just the flat gray background. Plain text can be housed here.</li>
+<li>Material layer: material depth 1 hold most of the containers and elements.</li>
+<li>Floating layer: material depth 2 hold things that are elevated above the material layer.</li>
+
 <p>Note: the &#39;spacer&#39; class is for styleguide demo purpose only.</p>
 
       </div>
@@ -406,7 +403,7 @@ It can also have a description, if so, add the class &#39;with-desc&#39; and a d
 
 
       <div class="kss-description">
-        <p>Standard inputs can be used as is and on their own. If you want to build a form with several inputs and actions on submit, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.</p>
+        <p>Standard inputs dont need any added style. If you want to build a form with several inputs and actions on submit, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.</p>
 <p>Note:  &lt;br/&gt; tags are for styleguide demo purpose only.</p>
 
       </div>
@@ -490,7 +487,7 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
 
 
       <div class="kss-description">
-        <p>Letting users import data from files cuts down on a lot of maual entry. Make there is enough feedback on what file has been selected.</p>
+        <p>Let users import data from files to cuts down on a lot of maual entry.</p>
 
       </div>
     </div>
@@ -741,36 +738,15 @@ However, don&#39;t mix standard inputs and prepend ones. These inputs should hav
       </div>
 
       </section>
-      <section id="kssref-1-8" class="kss-section kss-section--depth-2">
+      <section id="kssref-1-7-1" class="kss-section kss-section--depth-3">
 
     <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
+      <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.8</span
-          >Buttons
-        </a>
-      </h2>
-
-
-      <div class="kss-description">
-        <p>When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
-For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a></p>
-<p>Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.</p>
-
-      </div>
-    </div>
-
-
-      </section>
-      <section id="kssref-1-8" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.8</span
+          <span class="kss-title__ref">1.7.1</span
           >Switch
         </a>
-      </h2>
+      </h3>
 
 
       <div class="kss-description">
@@ -805,6 +781,27 @@ For more details take a look at the <a href="http://www.google.com/design/spec/c
       </div>
 
       </section>
+      <section id="kssref-1-8" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.8</span
+          >Buttons
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
+For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a></p>
+<p>Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.</p>
+
+      </div>
+    </div>
+
+
+      </section>
       <section id="kssref-1-8-1" class="kss-section kss-section--depth-3">
 
     <div class="kss-style">
@@ -817,8 +814,7 @@ For more details take a look at the <a href="http://www.google.com/design/spec/c
 
 
       <div class="kss-description">
-        <p>The flat buttons are &#39;printed&#39; on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
-Use the flat buttons when there is a panel/area behind (around) the button.</p>
+        <p>The flat buttons are &#39;printed&#39; on another pice of material and only show its area when hovered, it uses capital letters to differentiate it from a link.</p>
 
       </div>
     </div>
@@ -853,7 +849,7 @@ Use the flat buttons when there is a panel/area behind (around) the button.</p>
 
 
       <div class="kss-description">
-        <p>The raised buttons lives on a raised layer and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.</p>
+        <p>The raised buttons is itself a pice of material and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.</p>
 
       </div>
     </div>
@@ -887,10 +883,6 @@ Use the flat buttons when there is a panel/area behind (around) the button.</p>
       </h3>
 
 
-      <div class="kss-description">
-        <p>The floating action button functions similarly to the raised buttons except that they float above the entire layout (even though its located inside the view header). They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a></p>
-
-      </div>
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -898,7 +890,9 @@ Use the flat buttons when there is a panel/area behind (around) the button.</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
+          The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
+A action button is always located inside the view header.
+<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
 	<md-tooltip>My account</md-tooltip>
 </button>
 <button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-arrow-right"></i>
@@ -920,7 +914,9 @@ Use the flat buttons when there is a panel/area behind (around) the button.</p>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab  material-depth-1&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the &lt;a href=&quot;http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button&quot;&gt;google material guidelines.&lt;/a&gt;
+A action button is always located inside the view header.
+&lt;button class=&quot;wfm-fab  material-depth-1&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
 	&lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
 &lt;/button&gt;
 &lt;button class=&quot;wfm-fab  material-depth-1 info&quot;&gt;&lt;i class=&quot;mdi mdi-arrow-right&quot;&gt;&lt;/i&gt;
