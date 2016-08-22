@@ -682,6 +682,9 @@ md-autocomplete[disabled] {
   md-autocomplete[disabled] input {
     cursor: not-allowed !important; }
 
+.wfm-form > md-autocomplete-wrap > input {
+  margin-right: 0 !important; }
+
 .wfm-radio input[type='radio'] {
   display: none; }
 
