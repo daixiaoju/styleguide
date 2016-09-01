@@ -9,12 +9,11 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        <div class=\"sub-header\">\n" +
     "          <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
     "        </div>\n" +
-    "        <uib-datepicker ng-model=\"startDate\"\n" +
-    "						show-weeks=\"true\"\n" +
-    "						custom-class=\"setRangeClass(date, mode)\"\n" +
-    "						min-date=\"dummyMinDate\"\n" +
-    "						class=\"wfm-datepicker\">\n" +
-    "		</uib-datepicker>\n" +
+    "        <div uib-datepicker\n" +
+    "	     ng-model=\"startDate\"\n" +
+    "	     datepicker-options=\"datepickerOptions\"	     \n" +
+    "	     class=\"wfm-datepicker\">\n" +
+    "	</div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"con-flex line-center\">\n" +
@@ -22,12 +21,11 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "        <div class=\"sub-header\">\n" +
     "          <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
     "        </div>\n" +
-    "        <uib-datepicker ng-model=\"endDate\"\n" +
-    "						show-weeks=\"true\"\n" +
-    "						custom-class=\"setRangeClass(date, mode)\"\n" +
-    "						min-date=\"dummyMinDate\"\n" +
-    "						class=\"wfm-datepicker\">\n" +
-    "		</uib-datepicker>\n" +
+    "        <div uib-datepicker\n" +
+    "	     ng-model=\"endDate\"\n" +
+    "	     datepicker-options=\"datepickerOptions\"\n" +
+    "	     class=\"wfm-datepicker\">\n" +
+    "	</div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -47,35 +45,31 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "    </div>\n" +
     "    <div class=\"con-flex line-center\">\n" +
     "      <input id=\"popupFromId\"\n" +
-    "			 class=\"date-range-start-date pointer start-date-input\"\n" +
-    "			 type=\"text\"\n" +
-    "			 ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\"\n" +
-    "			 ng-model=\"startDate\"\n" +
-    "			 uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "			 on-open-focus=\"false\"\n" +
-    "			 custom-class=\"setRangeClass(date, mode)\"\n" +
-    "			 show-weeks=\"true\"\n" +
-    "			 is-open=\"dropDownState.showStartDatePicker\"\n" +
-    "			 ng-required=\"true\"\n" +
-    "			 show-button-bar=\"false\"\n" +
-    "			 min-date=\"dummyMinDate\"\n" +
-    "			 close-on-date-selection=\"false\" />\n" +
+    "	     class=\"date-range-start-date pointer start-date-input\"\n" +
+    "	     type=\"text\"\n" +
+    "	     ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\"\n" +
+    "	     ng-model=\"startDate\"\n" +
+    "	     uib-datepicker-popup=\"{{dateFormat}}\"\n" +
+    "	     on-open-focus=\"false\"\n" +
+    "	     is-open=\"dropDownState.showStartDatePicker\"\n" +
+    "	     ng-required=\"true\"\n" +
+    "	     show-button-bar=\"false\"\n" +
+    "	     datepicker-options=\"datepickerOptions\"	 \n" +
+    "	     close-on-date-selection=\"false\" />\n" +
     "    </div>\n" +
     "    <div class=\"con-flex line-center\">\n" +
     "      <input id=\"popupToId\"\n" +
-    "			 class=\"pointer end-date-input date-range-end-date\"\n" +
-    "			 type=\"text\"\n" +
-    "			 ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\"\n" +
-    "			 ng-model=\"endDate\"\n" +
-    "			 uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "			 on-open-focus=\"false\"\n" +
-    "			 show-weeks=\"true\"\n" +
-    "			 custom-class=\"setRangeClass(date, mode)\"\n" +
-    "			 is-open=\"dropDownState.showEndDatePicker\"\n" +
-    "			 ng-required=\"true\"\n" +
-    "			 show-button-bar=\"false\"\n" +
-    "			 min-date=\"dummyMinDate\"\n" +
-    "			 close-on-date-selection=\"false\" />\n" +
+    "	     class=\"pointer end-date-input date-range-end-date\"\n" +
+    "	     type=\"text\"\n" +
+    "	     ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\"\n" +
+    "	     ng-model=\"endDate\"\n" +
+    "	     uib-datepicker-popup=\"{{dateFormat}}\"\n" +
+    "	     on-open-focus=\"false\"\n" +
+    "	     is-open=\"dropDownState.showEndDatePicker\"\n" +
+    "	     ng-required=\"true\"\n" +
+    "	     show-button-bar=\"false\"\n" +
+    "	     datepicker-options=\"datepickerOptions\"	 \n" +
+    "	     close-on-date-selection=\"false\" />\n" +
     "    </div>\n" +
     "  </div>\n" +
     "\n" +
