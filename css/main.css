@@ -1641,12 +1641,12 @@ md-progress-circular .md-inner .md-right .md-half-circle {
 .animate-show.ng-hide-add.ng-hide-add-active, .ng-hide-add.ng-hide-add-active.wfm-accordion-content,
 .animate-show.ng-hide-remove.ng-hide-remove-active,
 .ng-hide-remove.ng-hide-remove-active.wfm-accordion-content {
-  -webkit-transition: all linear 0.5s;
-  transition: all linear 0.5s; }
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s; }
 
 .animate-show.ng-hide, .ng-hide.wfm-accordion-content {
-  line-height: 0;
-  opacity: 0; }
+  opacity: 0;
+  margin-top: -5px; }
 
 .bubble-wrap {
   position: absolute;
@@ -1825,8 +1825,6 @@ md-content {
   background-color: transparent !important; }
 
 .wfm-card-unselected {
-  width: 90%;
-  margin: 10px auto;
   transition-property: box-shadow, background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -1837,8 +1835,6 @@ md-content {
   background-color: #ffffff !important; }
 
 .wfm-card-selected {
-  margin: 25px auto;
-  width: 95%;
   transition-property: width, height;
   transition-duration: 0.2s;
   transition-timing-function: ease-out; }
