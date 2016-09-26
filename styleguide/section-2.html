@@ -548,6 +548,13 @@ $scope.getPageData = function(pageIndex) {
 
       <div class="kss-description">
         <p>A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.</p>
+<p><table class="wfm-table"></p>
+<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
+<p><tr><td>working-hours</td><td>Bind to time range object</td><td>true</td></tr></p>
+<p><tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr></p>
+<p><tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
+</table>
+</br></p>
 
       </div>
     </div>
@@ -557,12 +564,12 @@ $scope.getPageData = function(pageIndex) {
           Example
         </div>
         <div class="kss-modifier__example">
-          <working-hours-picker class="working-hours-picker" working-hours="workingHours"></working-hours-picker>
+          <working-hours-picker class="working-hours-picker" working-hours="workingHours" disable-next-day="disableNextDay"></working-hours-picker>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;working-hours-picker class=&quot;working-hours-picker&quot; working-hours=&quot;workingHours&quot;&gt;&lt;/working-hours-picker&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;working-hours-picker class=&quot;working-hours-picker&quot; working-hours=&quot;workingHours&quot; disable-next-day=&quot;disableNextDay&quot;&gt;&lt;/working-hours-picker&gt;</code></pre>
       </div>
 
       </section>
