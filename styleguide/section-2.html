@@ -413,12 +413,16 @@ The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridi
           Example
         </div>
         <div class="kss-modifier__example">
-          <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+           <div class="con-row">
+   <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+ </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;time-range-picker ng-model=&quot;timeRange&quot; disable-next-day=&quot;disableNextDay&quot;&gt;&lt;/time-range-picker&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;div class=&quot;con-row&quot;&gt;
+   &lt;time-range-picker ng-model=&quot;timeRange&quot; disable-next-day=&quot;disableNextDay&quot;&gt;&lt;/time-range-picker&gt;
+ &lt;/div&gt;</code></pre>
       </div>
 
       </section>
