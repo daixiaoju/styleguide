@@ -344,6 +344,103 @@ The panel can have a footer with a number of actions, try to keep this number as
       </div>
 
       </section>
+      <section id="kssref-4-2-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.2.1</span
+          >Multiple search
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.</p>
+<p>Note: The header text is translated in the project but the names of the inputs needs to be translated using $translate.instant() in the controller.</p>
+<div class="jsprewrap">
+<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+<div ng-show="showjs">
+    <code><pre>
+$scope.searchOptions = {
+   keyword: &#39;&#39;,
+   searchKeywordChanged: false,
+   searchFields: [
+     &#39;option1&#39;,&#39;option2&#39;,&#39;option3&#39;,&#39;option4&#39;,&#39;option5&#39;,&#39;option6&#39;
+   ]
+};
+    </pre></code>
+</div>
+</div>
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
+  <div class="sub-header">
+    <wfm-multiple-search-input title="'Search'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="con-row">
+    <div class="con-flex ">
+      Content
+    </div>
+  </div>
+  <div class="con-footer">
+    <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;wfm-multiple-search-input title=&quot;&#x27;Search&#x27;&quot; search-options=&quot;searchOptions&quot; search-callback=&quot;searchKeyword&quot;&gt;&lt;/wfm-multiple-search-input&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex &quot;&gt;
+      Content
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;con-footer&quot;&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
       <section id="kssref-4-3" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">

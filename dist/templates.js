@@ -114,6 +114,41 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/wfm-multiple-search/wfm-multiple-search-input.tpl.html',
+    "<label for=\"advanced-search\" class=\"input-prepend wfm-multiple-search-wrapper\">\n" +
+    "	<i class=\"mdi mdi-magnify\">\n" +
+    "		<md-tooltip>{{ vm.title }}</md-tooltip>\n" +
+    "	</i>\n" +
+    "	<input id=\"advanced-search\" class=\"advanced-input\" type=\"text\" placeholder=\"{{vm.title}}\" ng-class=\"{'expand-advanced-input': vm.showAdvancedSearchOption}\"\n" +
+    "	ng-model=\"vm.searchOptions.keyword\" ng-keydown=\"$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()\" ng-change=\"vm.validateSearchKeywordChanged()\"\n" +
+    "	ng-click=\"vm.toggleAdvancedSearchOption($event)\" keyword-format/>\n" +
+    "	<div class=\"advanced-input-dropdown\" ng-cloak ng-if=\"vm.showAdvancedSearchOption\" outside-click=\"vm.turnOffAdvancedSearch()\">\n" +
+    "		<div class=\"con-row\">\n" +
+    "			<div class=\"con-flex\">\n" +
+    "				<div class=\"panel material-depth-1\">\n" +
+    "					<div class=\"sub-header\">\n" +
+    "						<h2>Searchcl</h2>\n" +
+    "					</div>\n" +
+    "					<form name=\"form\" class=\"wfm-form\" novalidate>\n" +
+    "						<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
+    "							<div class=\"full-padding\" >\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{vm.searchOptions.searchFields[$index]}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\"/>\n" +
+    "							</div>\n" +
+    "							<div class=\"full-padding\">\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{vm.searchOptions.searchFields[$index + 1]}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
+    "							</div>\n" +
+    "						</div>\n" +
+    "						<div class=\"con-footer\">\n" +
+    "							<button id=\"go-advanced-search\" class=\"wfm-btn wfm-btn-invis-primary\" ng-click=\"vm.advancedSearch()\">Search</button>\n" +
+    "						</div>\n" +
+    "					</form>\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "	</label>\n"
+  );
+
+
   $templateCache.put('directives/workinghourspicker/working-hours-picker.tpl.html',
     "<div class=\"row toolbar\">\n" +
     "	<div class=\"wfm-block\">\n" +
