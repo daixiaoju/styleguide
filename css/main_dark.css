@@ -620,6 +620,9 @@ input:-ms-input-placeholder {
   height: 0;
   opacity: 0; }
 
+.form-panel {
+  overflow-x: hidden; }
+
 .md-select-menu-container {
   background: #424242 !important;
   z-index: 9999; }
