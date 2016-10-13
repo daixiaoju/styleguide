@@ -501,6 +501,15 @@ select:after {
   border-top: .375em solid red;
   pointer-events: none; }
 
+.input-icon i {
+  display: inline-flex;
+  width: 100%; }
+
+.input-icon input {
+  margin-left: 5px;
+  width: 100%; }
+
+/*Deprecated*/
 .input-prepend {
   width: 100%; }
   .input-prepend i {
