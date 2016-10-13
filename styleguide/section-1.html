@@ -1009,18 +1009,16 @@ It is possible to trigger the animations using ng-click and/or ng-class.</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          Default
-<md-slider flex min="0" max="100" aria-label="slider"></md-slider>
-With label
-<md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
+          <label>Generic:</label><md-slider flex min="0" max="10" aria-label="slider"></md-slider>
+<label>With label:</label><md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
+<label>Vertical.</label><md-slider flex md-discrete min="0" max="100" aria-label="slider" md-vertical></md-slider>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">Default
-&lt;md-slider flex min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;
-With label
-&lt;md-slider flex md-discrete min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label&gt;Generic:&lt;/label&gt;&lt;md-slider flex min=&quot;0&quot; max=&quot;10&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;
+&lt;label&gt;With label:&lt;/label&gt;&lt;md-slider flex md-discrete min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;
+&lt;label&gt;Vertical.&lt;/label&gt;&lt;md-slider flex md-discrete min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot; md-vertical&gt;&lt;/md-slider&gt;</code></pre>
       </div>
 
       </section>

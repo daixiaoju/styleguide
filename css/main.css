@@ -781,33 +781,34 @@ md-autocomplete[disabled] {
     white-space: nowrap;
     cursor: pointer; }
 
-md-slider .md-focus-thumb, md-slider .md-focus-ring {
-  display: none !important; }
+md-slider[md-vertical] .md-sign:after {
+  border-left-color: #0099FF; }
 
 md-slider .md-thumb {
+  transform: scale(0.7) !important; }
+
+md-slider .md-slider-content {
   cursor: pointer; }
 
-md-slider .md-min .md-thumb:after {
-  background-color: #ffffff !important; }
-
-md-slider canvas {
-  display: none; }
-
-/*slider theme*/
-md-slider .md-thumb:after {
-  border-color: #66c2ff;
-  background-color: #66c2ff; }
+md-slider .md-track-ticks {
+  opacity: 0; }
 
 md-slider .md-track.md-track-fill,
+md-slider .md-thumb:after {
+  background-color: #66c2ff !important;
+  border-color: #66c2ff !important; }
+
 md-slider .md-sign {
-  background-color: #66c2ff; }
+  background-color: #0099FF; }
 
 md-slider .md-sign:after {
-  border-top-color: #66c2ff; }
+  border-top-color: #0099FF; }
 
-md-slider.md-min .md-thumb:after {
-  background-color: #ffffff !important;
-  transition: all 0.5s ease-in-out; }
+md-slider .md-min .md-thumb:after {
+  background-color: #66c2ff; }
+
+md-slider .md-slider-wrapper:focus > .md-thumb {
+  background-color: red !important; }
 
 .view-header {
   width: 100%;
