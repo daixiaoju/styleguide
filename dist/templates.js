@@ -3,81 +3,67 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div ng-show=\"!displayPopup()\">\n" +
-    "  <div class=\"con-row\">\n" +
-    "    <div class=\"con-flex line-center\">\n" +
-    "      <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
-    "        <div class=\"sub-header\">\n" +
-    "          <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "    <div class=\"con-row\">\n" +
+    "        <div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "            <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "                <div class=\"sub-header\">\n" +
+    "                    <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "                </div>\n" +
+    "                <div uib-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
+    "                </div>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div uib-datepicker\n" +
-    "	     ng-model=\"startDate\"\n" +
-    "	     datepicker-options=\"datepickerOptions\"	     \n" +
-    "	     class=\"wfm-datepicker\">\n" +
-    "	</div>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
-    "    <div class=\"con-flex line-center\">\n" +
-    "      <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
-    "        <div class=\"sub-header\">\n" +
-    "          <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "        <div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "            <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "                <div class=\"sub-header\">\n" +
+    "                    <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "                </div>\n" +
+    "                <persian-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
+    "                </persian-datepicker>\n" +
+    "            </div>\n" +
     "        </div>\n" +
-    "        <div uib-datepicker\n" +
-    "	     ng-model=\"endDate\"\n" +
-    "	     datepicker-options=\"datepickerOptions\"\n" +
-    "	     class=\"wfm-datepicker\">\n" +
-    "	</div>\n" +
-    "      </div>\n" +
+    "        <div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "            <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "                <div class=\"sub-header\">\n" +
+    "                    <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "                </div>\n" +
+    "                <div uib-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "            <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "                <div class=\"sub-header\">\n" +
+    "                    <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "                </div>\n" +
+    "                <persian-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
+    "                </persian-datepicker>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
     "    </div>\n" +
-    "  </div>\n" +
-    "\n" +
-    "  <div ng-repeat=\"validator in validators\"\n" +
-    "	   ng-if=\"displayError(validator.key)\"\n" +
-    "	   class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
-    "  </div>\n" +
-    "\n" +
+    "    <div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
+    "        <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
     "<div ng-show=\"displayPopup()\">\n" +
-    "  <div class=\"con-row\">\n" +
-    "    <div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"onClickShowAllDates()\" ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\n" +
-    "      <i class=\"mdi mdi-calendar\"></i>\n" +
+    "    <div class=\"con-row\">\n" +
+    "        <div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"onClickShowAllDates()\" ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\n" +
+    "            <i class=\"mdi mdi-calendar\"></i>\n" +
+    "        </div>\n" +
+    "        <div class=\"con-flex line-center\">\n" +
+    "            <input id=\"popupFromId\" class=\"date-range-start-date pointer start-date-input\" type=\"text\" ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\" ng-model=\"startDate\" uib-datepicker-popup=\"{{dateFormat}}\" on-open-focus=\"false\"\n" +
+    "                is-open=\"dropDownState.showStartDatePicker\" ng-required=\"true\" show-button-bar=\"false\" datepicker-options=\"datepickerOptions\" close-on-date-selection=\"false\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"con-flex line-center\">\n" +
+    "            <input id=\"popupToId\" class=\"pointer end-date-input date-range-end-date\" type=\"text\" ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\" ng-model=\"endDate\" uib-datepicker-popup=\"{{dateFormat}}\" on-open-focus=\"false\" is-open=\"dropDownState.showEndDatePicker\"\n" +
+    "                ng-required=\"true\" show-button-bar=\"false\" datepicker-options=\"datepickerOptions\" close-on-date-selection=\"false\" />\n" +
+    "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"con-flex line-center\">\n" +
-    "      <input id=\"popupFromId\"\n" +
-    "	     class=\"date-range-start-date pointer start-date-input\"\n" +
-    "	     type=\"text\"\n" +
-    "	     ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\"\n" +
-    "	     ng-model=\"startDate\"\n" +
-    "	     uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "	     on-open-focus=\"false\"\n" +
-    "	     is-open=\"dropDownState.showStartDatePicker\"\n" +
-    "	     ng-required=\"true\"\n" +
-    "	     show-button-bar=\"false\"\n" +
-    "	     datepicker-options=\"datepickerOptions\"	 \n" +
-    "	     close-on-date-selection=\"false\" />\n" +
-    "    </div>\n" +
-    "    <div class=\"con-flex line-center\">\n" +
-    "      <input id=\"popupToId\"\n" +
-    "	     class=\"pointer end-date-input date-range-end-date\"\n" +
-    "	     type=\"text\"\n" +
-    "	     ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\"\n" +
-    "	     ng-model=\"endDate\"\n" +
-    "	     uib-datepicker-popup=\"{{dateFormat}}\"\n" +
-    "	     on-open-focus=\"false\"\n" +
-    "	     is-open=\"dropDownState.showEndDatePicker\"\n" +
-    "	     ng-required=\"true\"\n" +
-    "	     show-button-bar=\"false\"\n" +
-    "	     datepicker-options=\"datepickerOptions\"	 \n" +
-    "	     close-on-date-selection=\"false\" />\n" +
-    "    </div>\n" +
-    "  </div>\n" +
     "\n" +
-    "  <div ng-repeat=\"validator in validators\"\n" +
-    "	   ng-if=\"displayError(validator.key)\"\n" +
-    "	   class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
-    "    <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
-    "  </div>\n" +
+    "    <div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
+    "        <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
+    "    </div>\n" +
     "\n" +
     "</div>\n"
   );
