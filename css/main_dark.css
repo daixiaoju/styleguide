@@ -654,7 +654,7 @@ md-select-menu md-option {
 
 md-select-menu md-option:focus:not([disabled]):not([selected]),
 md-select-menu md-option[selected], md-select-menu md-select-menu md-option[selected]:focus {
-  background-color: #627b32; }
+  background-color: #627b32 !important; }
 
 md-select {
   margin: 0 !important; }
