@@ -135,6 +135,34 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/wfm-right-panel/wfm-right-panel.tpl.html',
+    "<md-backdrop class=\"md-sidenav-backdrop md-opaque ng-scope\" ng-if=\"vm.panelOptions.showBackdrop && vm.panelOptions.panelState\"\n" +
+    "             ng-click=\"vm.panelOptions.panelState = false;\"></md-backdrop>\n" +
+    "\n" +
+    "<button class=\"open-right-panel call-out-button wfm-btn wfm-btn-invis-primary\" ng-if=\"vm.panelOptions.showPopupButton\" ng-click=\"vm.panelOptions.panelState = true\">\n" +
+    "	<i class=\"mdi mdi-chevron-double-left\"></i>\n" +
+    "</button>\n" +
+    "\n" +
+    "<div resizable r-directions=\"['left']\" r-flex=\"false\" ng-show=\"vm.showPanel\">\n" +
+    "\n" +
+    "	<md-sidenav class=\"md-sidenav-right wfm-right-panel drsElement\" md-component-id=\"right-panel\" md-is-open=\"vm.panelOptions.panelState\">\n" +
+    "\n" +
+    "		<div class=\"sidenav-header\">\n" +
+    "			<span class=\"close-right-panel chevron pull-left\" ng-click=\"vm.closePanel()\" ng-if=\"vm.panelOptions.showCloseButton\">\n" +
+    "				<i class=\"mdi mdi-arrow-right\"></i>\n" +
+    "				<md-tooltip>{{\"HidePanel\" | translate}}</md-tooltip>\n" +
+    "			</span>\n" +
+    "			<span>{{vm.panelOptions.panelTitle | translate}}</span>\n" +
+    "		</div>\n" +
+    "\n" +
+    "		<div class=\"panel-content\" ng-transclude></div>\n" +
+    "\n" +
+    "	</md-sidenav>\n" +
+    "\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/workinghourspicker/working-hours-picker.tpl.html',
     "<div class=\"con-row\">\n" +
     "	<div><!--No need for a con-flex here, its in the directive-->\n" +
