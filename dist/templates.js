@@ -3,67 +3,93 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
   $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div ng-show=\"!displayPopup()\">\n" +
-    "    <div class=\"con-row\">\n" +
-    "        <div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
-    "            <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
-    "                <div class=\"sub-header\">\n" +
-    "                    <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
-    "                </div>\n" +
-    "                <div uib-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
-    "            <div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
-    "                <div class=\"sub-header\">\n" +
-    "                    <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
-    "                </div>\n" +
-    "                <persian-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
-    "                </persian-datepicker>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
-    "            <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
-    "                <div class=\"sub-header\">\n" +
-    "                    <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
-    "                </div>\n" +
-    "                <div uib-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
-    "            <div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
-    "                <div class=\"sub-header\">\n" +
-    "                    <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
-    "                </div>\n" +
-    "                <persian-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker\">\n" +
-    "                </persian-datepicker>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "    <div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
-    "        <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
-    "    </div>\n" +
+    "	<div class=\"con-row\">\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "				<div class=\"sub-header\">\n" +
+    "					<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "				</div>\n" +
+    "				<div ng-show=\"isGregorian\" uib-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "				<div class=\"sub-header\">\n" +
+    "					<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "				</div>\n" +
+    "				<persian-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
+    "				</persian-datepicker>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "				<div class=\"sub-header\">\n" +
+    "					<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "				</div>\n" +
+    "				<div uib-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "				<div class=\"sub-header\">\n" +
+    "					<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "				</div>\n" +
+    "				<persian-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
+    "				</persian-datepicker>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "	</div>\n" +
+    "	<div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
+    "		<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
+    "	</div>\n" +
     "</div>\n" +
     "\n" +
     "<div ng-show=\"displayPopup()\">\n" +
-    "    <div class=\"con-row\">\n" +
-    "        <div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"onClickShowAllDates()\" ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\n" +
-    "            <i class=\"mdi mdi-calendar\"></i>\n" +
-    "        </div>\n" +
-    "        <div class=\"con-flex line-center\">\n" +
-    "            <input id=\"popupFromId\" class=\"date-range-start-date pointer start-date-input\" type=\"text\" ng-click=\"dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker\" ng-model=\"startDate\" uib-datepicker-popup=\"{{dateFormat}}\" on-open-focus=\"false\"\n" +
-    "                is-open=\"dropDownState.showStartDatePicker\" ng-required=\"true\" show-button-bar=\"false\" datepicker-options=\"datepickerOptions\" close-on-date-selection=\"false\" />\n" +
-    "        </div>\n" +
-    "        <div class=\"con-flex line-center\">\n" +
-    "            <input id=\"popupToId\" class=\"pointer end-date-input date-range-end-date\" type=\"text\" ng-click=\"dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker\" ng-model=\"endDate\" uib-datepicker-popup=\"{{dateFormat}}\" on-open-focus=\"false\" is-open=\"dropDownState.showEndDatePicker\"\n" +
-    "                ng-required=\"true\" show-button-bar=\"false\" datepicker-options=\"datepickerOptions\" close-on-date-selection=\"false\" />\n" +
-    "        </div>\n" +
-    "    </div>\n" +
+    "<div class=\"wfm-datepicker-controllers-container\">\n" +
+    "	<div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"displayCalendars = !displayCalendars\">\n" +
+    "		<i class=\"mdi mdi-calendar\"></i>\n" +
+    "	</div>\n" +
+    "	<div tabindex=0 class=\"start-date-indicator\" ng-click=\"displayCalendars = !displayCalendars\">\n" +
+    "			<span>From</span>: {{ startDate | date: dateFormat }}\n" +
+    "	</div>\n" +
+    "	<div tabindex=0 ng-click=\"displayCalendars = !displayCalendars\">\n" +
+    "			<span>To</span>: {{ endDate | date: dateFormat }}\n" +
+    "	</div>\n" +
+    "</div>\n" +
+    "<div class=\"wfm-datepicker-container\" ng-show=\"displayCalendars\">\n" +
+    "	<div class=\"con-row wfm-datepicker-popup-row\">\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "				<div ng-show=\"isGregorian\" uib-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker popup-datepicker\">\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
+    "				<persian-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker popup-datepicker\">\n" +
+    "				</persian-datepicker>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "				<div uib-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker popup-datepicker\">\n" +
+    "				</div>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
+    "			<div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
+    "				<persian-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker popup-datepicker\">\n" +
+    "				</persian-datepicker>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "	</div>\n" +
     "\n" +
-    "    <div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container alert-error notice-spacer\">\n" +
-    "        <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
-    "    </div>\n" +
+    "	<div ng-repeat=\"validator in validators\" ng-if=\"displayError(validator.key)\" class=\"error-msg-container error-msg-popup-container error-msg-popup alert-error notice-spacer\">\n" +
+    "		<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>\n" +
+    "	</div>\n" +
+    "</div>\n" +
     "\n" +
     "</div>\n"
   );
