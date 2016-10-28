@@ -442,6 +442,84 @@ $scope.searchOptions = {
       </div>
 
       </section>
+      <section id="kssref-4-2-2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.2.2</span
+          >Panel with sidebar
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The sub header of a regular panel can be repaced to provide a sidebar within the panel.</p>
+<div class="jsprewrap">
+<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+<div ng-show="showjs">
+    <code><pre>
+$scope.rightPanelOptions = {
+    panelState: false,
+    panelTitle: &#39;Main panel tilte&#39;,
+    sidePanelTitle: &#39;Sidepanel title&#39;,
+    showCloseButton: true,
+    showBackdrop: true,
+    showResizer: false,
+    showPopupButton: true
+};
+    </pre></code>
+</div>
+</div>
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="panel material-depth-1">
+<wfm-right-panel panel-options="rightPanelOptions" style="min-height:400px">
+	<div class="con-row">
+		<div class="con-flex">content</div>
+	</div>
+<div class="con-footer">
+	<button class="wfm-btn wfm-btn-invis-default">Action</button>
+</div>
+</wfm-right-panel>
+<div class="con-row">
+	<div class="con-flex">Content</div>
+</div>
+<div class="con-footer">
+	<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+	<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel material-depth-1&quot;&gt;
+&lt;wfm-right-panel panel-options=&quot;rightPanelOptions&quot; style=&quot;min-height:400px&quot;&gt;
+	&lt;div class=&quot;con-row&quot;&gt;
+		&lt;div class=&quot;con-flex&quot;&gt;content&lt;/div&gt;
+	&lt;/div&gt;
+&lt;div class=&quot;con-footer&quot;&gt;
+	&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Action&lt;/button&gt;
+&lt;/div&gt;
+&lt;/wfm-right-panel&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+	&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-footer&quot;&gt;
+	&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+	&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
       <section id="kssref-4-3" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
