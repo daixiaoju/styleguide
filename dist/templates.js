@@ -96,23 +96,19 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
 
   $templateCache.put('directives/time-range-picker/time-range-picker.tpl.html',
-    "<div class=\"con-row\">\n" +
-    "  <div class=\"con-flex\">\n" +
-    "    <timepicker-wrap ng-model=\"startTime\"></timepicker-wrap>\n" +
+    "<div class=\"inline-flex\">\n" +
+    "<timepicker-wrap ng-model=\"startTime\"></timepicker-wrap>\n" +
+    "<timepicker-wrap ng-model=\"endTime\"></timepicker-wrap>\n" +
+    "<div ng-show=\"!disableNextDay || nextDay\">\n" +
+    "  <div tabindex=0 class=\"context-menu card-context\" style=\"margin:0;\" ng-click=\"toggleNextDay()\">\n" +
+    "    <i ng-if=\"!nextDay\" class=\"mdi mdi-weather-sunny\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
+    "      <md-tooltip><span translate>Today</span></md-tooltip>\n" +
+    "    </i>\n" +
+    "    <i ng-if=\"nextDay\" class=\"mdi mdi-weather-night\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
+    "      <md-tooltip><span translate>OverMidnight</span></md-tooltip>\n" +
+    "    </i>\n" +
     "  </div>\n" +
-    "  <div class=\"con-flex\">\n" +
-    "    <timepicker-wrap ng-model=\"endTime\"></timepicker-wrap>\n" +
-    "  </div>\n" +
-    "  <div class=\"con-flex\" ng-show=\"!disableNextDay || nextDay\">\n" +
-    "    <div tabindex=0 class=\"context-menu card-context\" style=\"margin:0;\" ng-click=\"toggleNextDay()\">\n" +
-    "      <i ng-if=\"!nextDay\" class=\"mdi mdi-weather-sunny\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
-    "        <md-tooltip><span translate>Today</span></md-tooltip>\n" +
-    "      </i>\n" +
-    "      <i ng-if=\"nextDay\" class=\"mdi mdi-weather-night\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\">\n" +
-    "        <md-tooltip><span translate>OverMidnight</span></md-tooltip> \n" +
-    "      </i>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
+    "</div>\n" +
     "</div>\n" +
     "\n" +
     "<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\">\n" +
