@@ -23,6 +23,9 @@
 .invisible {
   visibility: hidden; }
 
+.hidden-visibility {
+  visibility: hidden; }
+
 /*Overrides bootstrap*/
 .wfm-datepicker-controllers-container {
   display: flex;
@@ -667,13 +670,17 @@ md-select:not([disabled]):focus .md-select-value {
   transform: none !important;
   -webkit-transform: none !important; }
 
+.md-select-value > span:not(.md-select-icon) {
+  white-space: normal; }
+
 md-select-menu md-select:not([disabled]):focus .md-select-value,
 md-select-menu md-option[selected],
 md-select-menu md-content {
   color: inherit !important; }
 
 md-select-menu md-option {
-  height: 30px; }
+  height: 30px;
+  color: rgba(0, 0, 0, 0.87); }
   md-select-menu md-option:hover {
     background-color: #E0E0E0; }
 
@@ -688,6 +695,10 @@ md-select {
     height: 21px; }
   md-select:not([disabled]):focus .md-select-value {
     color: inherit !important; }
+
+.inline-select {
+  margin-top: -5px !important;
+  margin-left: 5px !important; }
 
 .bu-select {
   margin-top: -5px; }
@@ -1947,7 +1958,7 @@ md-card {
   .wfm-time-range-picker-wrap .error-msg-container {
     display: none;
     z-index: 999;
-    width: 100%;
+    width: 360px;
     margin-top: 10px;
     position: absolute; }
   .wfm-time-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
@@ -1979,7 +1990,8 @@ md-card {
   text-align: right; }
 
 .working-hours-radio {
-  margin-top: 5px; }
+  margin-top: 5px;
+  display: flex; }
 
 .working-hours-row {
   border-top: 1px solid rgba(0, 0, 0, 0.06); }
@@ -2063,6 +2075,11 @@ md-card {
 
 .wfm-chip .chip-error {
   background: #ee8f7d !important; }
+
+.chip-disabled {
+  color: rgba(0, 0, 0, 0.26) !important; }
+  .chip-disabled .wfm-chip {
+    cursor: not-allowed !important; }
 
 .wfm-chip-wrap {
   display: inline-block;
