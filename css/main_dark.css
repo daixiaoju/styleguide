@@ -1179,7 +1179,7 @@ table {
 
 .wfm-table td, .wfm-table th {
   border: 1px solid #303030;
-  color: #6b6b6b;
+  color: rgba(255, 255, 255, 0.87) !important;
   padding: 5px;
   background-color: #424242; }
 
