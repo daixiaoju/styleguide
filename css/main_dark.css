@@ -1941,10 +1941,10 @@ md-card {
   .wfm-time-range-picker-wrap timepicker-wrap > div {
     margin-top: 3px; }
   .wfm-time-range-picker-wrap .wfm-timepicker-wrap .md-button {
-    min-width: 48px;
-    width: 48px;
+    text-align: left !important;
+    min-width: auto !important;
     margin: 0;
-    padding: 0;
+    margin-right: 5px;
     height: 25px;
     line-height: 25px;
     min-height: 25px; }
