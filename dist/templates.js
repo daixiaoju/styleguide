@@ -16,7 +16,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
     "			<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
     "				<div class=\"sub-header\">\n" +
-    "					<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>\n" +
+    "					<span>From</span>: <strong>{{startDate | persianDate:'shortDate' }}</strong>\n" +
     "				</div>\n" +
     "				<persian-datepicker ng-model=\"startDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
     "				</persian-datepicker>\n" +
@@ -34,7 +34,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		<div class=\"con-flex line-center\" ng-show=\"isJalaali\">\n" +
     "			<div class=\"wfm-datepicker-wrap date-range-end-date\">\n" +
     "				<div class=\"sub-header\">\n" +
-    "					<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>\n" +
+    "					<span>To</span>: <strong>{{ endDate | persianDate:'shortDate' }}</strong>\n" +
     "				</div>\n" +
     "				<persian-datepicker ng-model=\"endDate\" datepicker-options=\"datepickerOptions\" class=\"wfm-datepicker inline-datepicker\">\n" +
     "				</persian-datepicker>\n" +
@@ -52,10 +52,10 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		<i class=\"mdi mdi-calendar\"></i>\n" +
     "	</div>\n" +
     "	<div tabindex=0 class=\"start-date-indicator\" ng-click=\"displayCalendars = !displayCalendars\">\n" +
-    "			<span>From</span>: {{ startDate | date: dateFormat }}\n" +
+    "			<span class=\"pointer\">From: </span><span ng-if=\"isGregorian\" class=\"pointer\">{{ startDate | date: dateFormat }}</span><span ng-if=\"isJalaali\" class=\"pointer\">{{ startDate | persianDate:'shortDate' }}</span>\n" +
     "	</div>\n" +
     "	<div tabindex=0 ng-click=\"displayCalendars = !displayCalendars\">\n" +
-    "			<span>To</span>: {{ endDate | date: dateFormat }}\n" +
+    "			<span class=\"pointer\">To: </span><span ng-if=\"isGregorian\" class=\"pointer\">{{ endDate | date: dateFormat }}</span><span ng-if=\"isJalaali\" class=\"pointer\">{{ endDate | persianDate:'shortDate' }}</span>\n" +
     "	</div>\n" +
     "</div>\n" +
     "<div class=\"wfm-datepicker-container\" ng-show=\"displayCalendars\">\n" +
