@@ -160,9 +160,11 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   $templateCache.put('directives/wfm-right-panel/wfm-right-panel.tpl.html',
     "<md-backdrop class=\"md-sidenav-backdrop md-opaque ng-scope\" ng-if=\"vm.panelOptions.showBackdrop && vm.panelOptions.panelState\" ng-click=\"vm.panelOptions.panelState = false;\"></md-backdrop>\n" +
     "\n" +
-    "<div tabindex=0 class=\"context-menu card-context open-right-panel\" ng-if=\"vm.panelOptions.showPopupButton\" ng-click=\"vm.panelOptions.panelState = true\">\n" +
-    "	<i class=\"mdi mdi-chevron-double-left\"></i>\n" +
-    "	<md-tooltip>{{\"ShowRightPanel\" | translate}}</md-tooltip>\n" +
+    "<div class=\"head-actions panel-menu\">\n" +
+    "	<div tabindex=0 class=\"context-menu card-context open-right-panel\" ng-if=\"vm.panelOptions.showPopupButton\" ng-click=\"vm.panelOptions.panelState = true\">\n" +
+    "	 <i class=\"mdi mdi-chevron-double-left\"></i>\n" +
+    "	 <md-tooltip>{{\"ShowRightPanel\" | translate}}</md-tooltip>\n" +
+    "	</div>\n" +
     "</div>\n" +
     "\n" +
     "<div resizable r-directions=\"['left']\" r-flex=\"false\" ng-show=\"vm.showPanel\">\n" +
@@ -178,7 +180,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "	</div>\n" +
     "	<div class=\"panel-content\" ng-transclude></div>\n" +
     "	</md-sidenav>\n" +
-    "</div>"
+    "</div>\n"
   );
 
 
