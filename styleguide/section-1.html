@@ -375,7 +375,7 @@ It can also have a description, if so, add the class &#39;with-desc&#39; and a d
 
 
       <div class="kss-description">
-        <p>Standard inputs dont need any added style. If you want to build a form with several inputs and actions on submit, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.</p>
+        <p>Standard inputs dont need any added style. If you want to build a form with several inputs and actions on submit, please look at the <a href=section-4.html#kssref-4-4>form layout</a>.</p>
 <p>Note:  &lt;br/&gt; tags are for styleguide demo purpose only.</p>
 
       </div>
@@ -954,6 +954,56 @@ It is possible to trigger the animations using ng-click and/or ng-class.</p>
 	&lt;i class=&quot;mdi mdi-close&quot;&gt;&lt;/i&gt;
 	&lt;md-tooltip&gt;Click me and im gone&lt;/md-tooltip&gt;
 &lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-8-5" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.8.5</span
+          >Icon buttons
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Icons can be used as buttons or toggles. In this case they should have a bigger trigger area, a cursor pointer and preferably a tooltip to explain its action.
+They can also house a <a href=section-1.html#kssref-1-12>context menu.</a></p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <h3>Simple</h3>
+<div tabindex=0 class="context-menu card-context">
+	<i class="mdi mdi-cake"></i>
+	<md-tooltip>Options</md-tooltip>
+</div>
+<h3>Toggle</h3>
+<div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
+	<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
+	<md-tooltip>Toggle something</md-tooltip>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h3&gt;Simple&lt;/h3&gt;
+&lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+	&lt;i class=&quot;mdi mdi-cake&quot;&gt;&lt;/i&gt;
+	&lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+&lt;/div&gt;
+&lt;h3&gt;Toggle&lt;/h3&gt;
+&lt;div tabindex=0 class=&quot;context-menu card-context&quot; ng-click=&quot;toggle = !toggle&quot;&gt;
+	&lt;i class=&quot;mdi mdi-account&quot; ng-class=&quot;{&#x27;mdi-account-outline&#x27;:toggle}&quot;&gt;&lt;/i&gt;
+	&lt;md-tooltip&gt;Toggle something&lt;/md-tooltip&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
