@@ -1,0 +1,801 @@
+﻿@import './classicvariables';
+
+//Overview
+//
+// <p>These guidelines are strongly inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html">Material design</a>
+// which have been implemented in <a href="https://www.google.com/inbox/">Google inbox</a> and <a href="http://www.materialup.com/">Android</a> </p>
+// <p>If something is missing, please refer to it.</p>
+//
+//Styleguide 0
+//
+
+//Style
+//
+// <h2 class="kss-title__permalink">Main concepts</h2>
+// <ul class="wfm-simple-list">
+// <li><b>Consistency</b>
+// <div class="subtext">By making the users recognize elements and behaviors we make the product faster to use.</div>
+// </li>
+// <li><b>Less clicks</b>
+// <div class="subtext">Keep the number of clicks in mind when building a view. </div>
+// </li>
+// <li><b>Scalability</b>
+// <div class="subtext">Conceder how things works with any number of data items, from S to XL</div>
+// </li>
+// <li><b>Help the user</b>
+// <div class="subtext">"Nature doesn't like empty space, and neither do users".
+// Never provide an empty form but suggest things or display placeholders.</div>
+// </li>
+// <li><b>Performance</b>
+// <div class="subtext">Avoid big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point.</div></li>
+// <li><b>Responsiveness</b>
+// <div class="subtext">Using the containers and elements from this Styleguide should result in a layout that works on desktops, tablets and phones.</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Other things to keep in mind</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b>Number of actions</b>
+// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of them could be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
+// <li><b>Loading</b>
+// <div class="subtext">If something takes time, dont leave the users in the dark. Display a loading bar, a spinner or a message.</li></li>
+// <li><b>Sorting and filters</b>
+// <div class="subtext">Provide ways to filter and sort large amounts of data, such as lists and tables.</div></li>
+// <li><i>SignalR depends on JQuery, but do not use JQuery for other purposes. </i>(We want to phase it out eventually)</li>
+// </ul>
+// <h2 class="kss-title__permalink">Help</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b> Tooltips</b>
+// <div class="subtext">Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).</div>
+// </li>
+// <li>
+// <b>Wiki page</b>
+// <div class="subtext">The wiki page for each module can be accessed from the top right corner</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Notices and Notifications</h2>
+// <ul class="wfm-simple-list">
+//  <li>
+// <div class="subtext">Notices and notifications are ways to inform the users what we are doing.
+// Notices are temporary alerts that should quickly show up and disappear when appropriate.
+// Notifications are more permanent and remind the users what happened recently.
+// It must be possible for the user to unsuscribe/resuscribe on each notification because if there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.</div>
+// </li>
+// </ul>
+//
+// Styleguide 0.1
+//
+
+// Code style
+//
+// More info here soon.
+// <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
+//
+//Styleguide 0.2
+//
+
+//Elements
+//
+//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but generally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
+//
+//Styleguide 1
+//
+//
+
+//Depth
+//
+//Material is built on depth (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
+//We have 3 'layers'; the background, material layer and the floating layer.
+//<ul>
+//<li>Background layer: Just the flat gray background. Plain text can be housed here.</li>
+//<li>Material layer: material depth 1 hold most of the containers and elements.</li>
+//<li>Floating layer: material depth 2 hold things that are elevated above the material layer.</li>
+//
+//Note: the 'spacer' class is for styleguide demo purpose only.
+//
+//Markup:
+//<div class="spacer"> Background </div>
+//<div class="spacer material-depth-1"> Layer 1 </div>
+//<div class="spacer material-depth-2"> Layer 2 </div>
+//<div class="spacer material-depth-1">
+//	<p class="spacer material-depth-1"> Stacked </p>
+//</div>
+//<div class="spacer material-depth-1 raise"> Elevate on hover </div>
+//<div class="spacer material-depth-1 ng-cloak reveal-material" ng-click="dissapear=true" ng-class="{'hide-material':dissapear}"> Animated layer</div>
+//
+//Styleguide 1.1
+//
+
+//Components
+//
+//This chapter details the use of more javascript heavy components and directives. Most of these need some configuration from the js side to make them work.
+//
+//Styleguide 2
+//
+
+//Colors
+//
+// Colors are used to indicate states of some elements (green for selected items, orange for warnings, red for errors and so on) or to make things blend in/stick out more.
+// In general, the smaller and more separate something is, the more saturated it can be to grab attention.
+// By providing common color variables we can have different themes and still keep a consistent feeling.
+// In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.
+// There are some predefined colors for standard text that will adapt to the theme automatically:
+//  <table class="wfm-table">
+//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
+//    <tbody>
+//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
+//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
+//    </tbody>
+//  </table>
+//
+//Styleguide 3
+//
+
+//Containers
+//
+//Containers are responsible for shaping the layout and creates structure to the views.
+//Almost everything described in the elements chapter should be housed inside a container.
+//There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
+//When building a new view, start by picking one or several containers and a flex layout that fits with your views content.
+//
+//  Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.
+//
+//  Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers.
+//
+//  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+//
+//<input style="opacity:0;pointer-events:none;" autofocus>
+//
+//Styleguide 4
+//
+
+//Layout
+//
+//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, conceder using a tabbed container, a card-grid or spreading them out over several rows.
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Class</th>
+//			<th>Description</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>con-row</td>
+//			<td>A flex container for con-flex boxes</td>
+//		</tr>
+//		<tr>
+//			<td>con-flex</td>
+//			<td>When inside a con-row it will divide its with with the number of con-flex siblings</td>
+//		</tr>
+//		<tr>
+//			<td>x2</td>
+//			<td>Will use the same space as two con-flex containers</td>
+//		</tr>
+//		<tr>
+//			<td>x3</td>
+//			<td>Will use the same space as three con-flex containers</td>
+//		</tr>
+//	</tbody>
+//</table>
+//<br>
+//
+//Markup:
+// <div class="con-row">
+//    <div class="con-flex">100%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">50%</div>
+//    <div class="con-flex">50%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">33%</div>
+//    <div class="con-flex">33%</div>
+//    <div class="con-flex">33%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex x3">75%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+//  <div class="con-row">
+//    <div class="con-flex x2">50%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+//
+//Styleguide 4.1
+//
+//
+
+//Panel
+//
+//The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
+//If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+//The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.
+//
+//Markup:
+//  <div class="panel material-depth-1">
+//   <div class="sub-header">
+//     <h2>Panel title</h2>
+//     <div class="head-actions panel-menu">
+//       <div tabindex=0 class="context-menu card-context">
+//         <i class="mdi mdi-dots-vertical"></i>
+//         <span class="context-menu-left">
+//           <ul class="wfm-list">
+//             <li>Menu item 1</li>
+//             <li>Menu item 2</li>
+//             <li>Menu item 3</li>
+//           </ul>
+//         </span>
+//       </div>
+//     </div>
+//   </div>
+//  <div class="con-row">
+//     <div class="con-flex">Content</div>
+//  </div>
+//   <div class="con-footer">
+//  	 <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//     <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//   </div>
+//  </div>
+//
+//
+//Styleguide 4.2
+
+//Tabbed panel
+//
+//When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
+//Also, avoid several tab panels close together to avoid confusion and maintain focus. For the same reason, modals can not be launched from within tabs.
+//
+//Markup:
+//  <div class="panel material-depth-1">
+//    <div class="wfm-slide-tabs tabbed-panel">
+//      <div class="head-actions panel-menu">
+//        <div tabindex=0 class="context-menu card-context">
+//          <i class="mdi mdi-dots-vertical"></i>
+//          <span class="context-menu-left">
+//            <ul class="wfm-list">
+//              <li>Menu item 1</li>
+//              <li>Menu item 2</li>
+//              <li>Menu item 3</li>
+//            </ul>
+//          </span>
+//        </div>
+//      </div>
+//      <md-content class="md-padding">
+//        <md-tabs md-dynamic-height md-border-bottom >
+//          <md-tab label="Tab title1">
+//            <md-content class="md-padding">
+//              <div class="con-row">
+//                <div class="con-flex">Content</div>
+//              </div>
+//              <div class="con-footer">
+//                <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//                <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//              </div>
+//            </md-content>
+//          </md-tab>
+//          <md-tab label="Tab title2">
+//            <md-content class="md-padding">
+//              <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title3">
+//        <md-content class="md-padding">
+//          <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title4">
+//        <md-content class="md-padding">
+//          <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-row">
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//    </md-tabs>
+//    </md-content>
+//  </div>
+//  </div>
+//
+//
+//Styleguide 4.3
+
+//Wizard panel
+//
+//In case you want to guide the user through a series of steps you can use a wizard panel.
+//
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.selectedIndex = 0;
+//$scope.nextTab = function() {
+//  var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
+//  $scope.selectedIndex = index;
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup:
+//<div class="panel material-depth-1">
+//<div class="wfm-slide-tabs tabbed-panel">
+//    <div class="head-actions panel-menu">
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-dots-vertical"></i>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
+//          </ul>
+//        </span>
+//      </div>
+//    </div>
+//  <md-content class="md-padding">
+//    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+//      <md-tab label="Tab title1">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title2">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title3">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title4">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//    </md-tabs>
+//  </md-content>
+//</div>
+//</div>
+//
+//
+//Styleguide 4.3.1
+
+//Form layout
+//
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
+//
+//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections using headers.
+//
+//Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
+//
+//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.reset = function(form) {
+//  if (form) {
+//    form.$setPristine();
+//    form.$setUntouched();
+//  }
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup: form_panel.hbs
+//
+//
+//Styleguide 4.4
+
+//Resources
+//
+//Here you can find some links to go further in CSS best practices
+//
+//Styleguide 9
+//
+//
+
+//Urls
+//
+// https://developer.mozilla.org/en-US/docs/Web/CSS
+//
+// http://philipwalton.com/articles/css-architecture/
+//
+// http://styleguides.io/
+//
+// http://alistapart.com/article/creating-style-guides
+//
+// http://axbom.com/slaying-5-ux-myths-good-mankind/
+//
+// https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
+//
+//Styleguide 9.1
+
+html{
+  overflow-y: auto!important;
+}
+
+.spacer {
+  margin: 25px;
+  padding: 15px;
+  text-align:center;
+  display: inline-block;
+  background: white;
+  }
+
+.jsprewrap{
+  width: 98%;
+  margin: 0 auto;
+  cursor:pointer;
+}
+
+.con-flex,.form-input-wrap{
+  border:1px dashed $gray026;
+}
+
+.ksscopy{
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-weight: bold;
+}
+
+/*template styles*/
+.kss-sidebar {
+	position:fixed!important;
+}
+
+#kss-node .kss-title__permalink {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+#kss-node .kss-section {
+	max-width: 80%;
+}
+
+.kss-style code {
+	font-size: 12px;
+	line-height: 14px !important;
+	font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
+
+#kss-node ol.linenums li {
+	border:none;
+}
+
+#kss-node .kss-sidebar {
+  background: white;
+  top: 0;
+  z-index:9;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 769px){
+	#kss-node .kss-sidebar {
+	  background: white;
+	  top: 0;
+	  z-index:9;
+	  max-height: 100%;
+	  overflow-y: auto;
+	}
+}
+
+.styleguide-break{
+	background-color:$orange-400;
+	color:$gray087;
+	padding:$full-padding;
+
+	span:before{
+		content:"This element does not exist in material design. ";
+	}
+}
+
+.angular-req span:before{
+	content:"This element require additional angular directives. "!important;
+}
+
+md-tooltip {
+    position: fixed;
+}
+
+.darktheme-background {
+    background: #303030 !important;
+    p {
+      color: rgba(255,255,255,0.87)!important;
+    }
+}
+
+.classictheme-background {
+    background: $gray012 !important;
+    p {
+      color: $text-color-standard !important;
+    }
+
+}
+
+
+//Color swatches
+.swatch-list {
+
+	.blue-500-swatch {
+			background:$blue-500!important;
+	}
+	.blue-300-swatch {
+			background:$blue-300!important;
+	}
+	.blue-100-swatch {
+			background:$blue-100!important;
+	}
+
+	.green-500-swatch {
+		background:$green-500!important;
+	}
+	.green-300-swatch {
+		background:$green-300!important;
+	}
+	.green-100-swatch {
+		background:$green-100!important;
+	}
+
+	.purple-100-swatch {
+		background:$purple-100!important;
+	}
+	.purple-300-swatch {
+		background:$purple-300!important;
+	}
+	.purple-500-swatch {
+		background:$purple-500!important;
+	}
+
+	.brown-100-swatch {
+		background:$brown-100!important;
+	}
+	.brown-300-swatch {
+		background:$brown-300!important;
+	}
+	.brown-500-swatch {
+		background:$brown-500!important;
+	}
+
+	.teal-100-swatch {
+		background:$teal-100!important;
+	}
+	.teal-300-swatch {
+		background:$teal-300!important;
+	}
+	.teal-500-swatch {
+		background:$teal-500!important;
+	}
+
+	.pink-500-swatch {
+		background:$pink-500!important;
+	}
+	.pink-300-swatch {
+		background:$pink-300!important;
+	}
+	.pink-100-swatch {
+		background:$pink-100!important;
+	}
+
+	.orange-400-swatch {
+			background:$orange-400!important;
+	}
+	.orange-500-swatch {
+			background:$orange-500!important;
+	}
+	.orange-600-swatch {
+			background:$orange-600!important;
+	}
+	.red-800-swatch {
+			background:$red-800!important;
+	}
+	.red-700-swatch {
+			background:#EF5350!important;
+	}
+	.red-600-swatch {
+			background:$red-600!important;
+	}
+	.gray-054-swatch {
+			background:$gray054!important;
+	}
+	.gray-300-swatch {
+			background:$gray-300!important;
+	}
+	.gray-012-swatch {
+			background:$gray012!important;
+	}
+	.gray-026-swatch {
+			background:$gray026!important;
+	}
+	.gray-087-swatch {
+			background:$gray087!important;
+	}
+	.gray-100-swatch {
+			background:$gray100!important;
+	}
+  .gray-500-swatch {
+      background:$gray-500!important;
+  }
+	.white-swatch {
+			background:$white!important;
+	}
+
+  //dark theme starts here
+
+  .blue-500-swatch-dark {
+			background: #0a84d6!important;
+	}
+	.blue-300-swatch-dark {
+			background: #136fac!important;
+	}
+	.blue-100-swatch-dark {
+			background:#1d5a83 !important;
+	}
+
+	.green-500-swatch-dark {
+		background:#84ad32!important;
+	}
+	.green-300-swatch-dark {
+		background:#6f8e32 !important;
+	}
+	.green-100-swatch-dark {
+		background:#627b32!important;
+	}
+
+	.purple-100-swatch-dark {
+		background:#9C27B0!important;
+	}
+	.purple-300-swatch-dark {
+		background:#BA68C8!important;
+	}
+	.purple-500-swatch-dark {
+		background:#E1BEE7!important;
+	}
+
+	.brown-100-swatch-dark {
+		background:#795548!important;
+	}
+	.brown-300-swatch-dark {
+		background:#A1887F!important;
+	}
+	.brown-500-swatch-dark {
+		background: #D7CCC8!important;
+	}
+
+	.teal-100-swatch-dark {
+		background: #009688 !important;
+	}
+	.teal-300-swatch-dark {
+		background:#4DB6AC !important;
+	}
+	.teal-500-swatch-dark {
+		background:#B2DFDB!important;
+	}
+
+	.pink-500-swatch-dark {
+		background: #F8BBD0!important;
+	}
+	.pink-300-swatch-dark {
+		background: #F06292!important;
+	}
+	.pink-100-swatch-dark {
+		background:#E91E63!important;
+	}
+
+	.orange-400-swatch-dark {
+			background:#c27c36!important;
+	}
+	.orange-500-swatch-dark {
+			background:#d68636!important;
+	}
+	.orange-600-swatch-dark {
+			background: #ea9036 !important;
+	}
+	.red-800-swatch-dark {
+			background:#ee8f7d!important;
+	}
+	.red-700-swatch-dark {
+			background:#EF5350!important;
+	}
+	.red-600-swatch-dark {
+			background:#ca3333!important;
+	}
+	.gray-054-swatch-dark {
+			background: rgba(107, 107, 107, 1)!important;
+	}
+	.gray-300-swatch-dark {
+			background:#555555!important;
+	}
+	.gray-012-swatch-dark {
+			background:#303030!important;
+	}
+	.gray-026-swatch-dark {
+			background: rgba(0,0,0,0.26)!important;
+	}
+	.gray-087-swatch-dark {
+			background: #d1d1d1!important;
+	}
+	.gray-100-swatch-dark {
+			background:#9E9E9E!important;
+	}
+  .gray-500-swatch-dark {
+      background:#9E9E9E!important;
+  }
+	.white-swatch-dark {
+			background: #424242!important;
+	}
+
+	li{
+		position:relative;
+		width: 100px;
+		height: 100px;
+
+		.white-color-text{
+			color:$white!important;
+		}
+
+		p{
+			left:0;
+			right:0;
+			bottom:0;
+			position:absolute;
+		}
+	}
+}
