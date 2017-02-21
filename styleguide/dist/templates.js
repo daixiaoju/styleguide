@@ -123,19 +123,22 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
 
 
   $templateCache.put('directives/wfm-multiple-search/wfm-multiple-search-input.tpl.html',
-    "<label for=\"advanced-search\" class=\"input-prepend wfm-multiple-search-wrapper\">\n" +
-    "	<i class=\"mdi mdi-magnify\">\n" +
-    "		<md-tooltip>{{ vm.title }}</md-tooltip>\n" +
-    "	</i>\n" +
+    "<div class=\"wfm-multiple-search-wrapper\">\n" +
     "	<input id=\"advanced-search\" class=\"advanced-input\" type=\"text\" placeholder=\"{{vm.title}}\" ng-class=\"{'expand-advanced-input': vm.showAdvancedSearchOption}\"\n" +
-    "	ng-model=\"vm.searchOptions.keyword\" ng-keydown=\"$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()\" ng-change=\"vm.validateSearchKeywordChanged()\"\n" +
+    "	ng-model=\"vm.searchOptions.keyword\" ng-keydown=\"$event.which === 13 && vm.resetFocusSearch() && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()\" ng-change=\"vm.validateSearchKeywordChanged()\"\n" +
     "	ng-click=\"vm.toggleAdvancedSearchOption($event)\" keyword-format/>\n" +
-    "	<div class=\"advanced-input-dropdown\" ng-cloak ng-if=\"vm.showAdvancedSearchOption\" outside-click=\"vm.turnOffAdvancedSearch()\">\n" +
+    "	\n" +
+    "	<span class=\"cursor-pointer search-icon\" ng-click=\"vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()\">\n" +
+    "		<i class=\"mdi mdi-magnify\" ng-class=\"{'focusing-search': vm.searchOptions.focusingSearch}\"></i>\n" +
+    "		<md-tooltip>{{'Search' | translate}}</md-tooltip>\n" +
+    "	</span>\n" +
+    "\n" +
+    "	<div class=\"advanced-input-dropdown\" ng-cloak ng-if=\"vm.showAdvancedSearchOption\" outside-click=\"vm.turnOffAdvancedSearch();\">\n" +
     "		<div class=\"con-row\">\n" +
     "			<div class=\"con-flex\">\n" +
     "				<div class=\"panel material-depth-1\">\n" +
     "					<div class=\"sub-header\">\n" +
-    "						<h2>{{ 'Searchcl' | translate }}</h2>\n" +
+    "						<h2>{{ 'Search' | translate }}</h2>\n" +
     "					</div>\n" +
     "					<form name=\"form\" class=\"wfm-form\" novalidate>\n" +
     "						<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
@@ -147,13 +150,14 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "							</div>\n" +
     "						</div>\n" +
     "						<div class=\"con-footer\">\n" +
-    "							<button id=\"go-advanced-search\" class=\"wfm-btn wfm-btn-invis-primary\" ng-click=\"vm.advancedSearch()\">Search</button>\n" +
+    "							<button id=\"go-advanced-search\" class=\"wfm-btn wfm-btn-invis-primary\" ng-click=\"vm.advancedSearch()\">{{'Search' | translate}}</button>\n" +
     "						</div>\n" +
     "					</form>\n" +
     "				</div>\n" +
     "			</div>\n" +
     "		</div>\n" +
-    "	</label>\n"
+    "	</div>\n" +
+    "</div>"
   );
 
 
