@@ -867,6 +867,183 @@ $scope.nextTab = function() {
 <p>A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections using headers.</p>
 <p>Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.</p>
 <p>If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-4-4-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.4.1</span
+          >Basic Form panel
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <div class="jsprewrap">
+<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+<div ng-show="showjs">
+    <code><pre>
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+    </pre></code>
+</div>
+</div>
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="panel form-panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="form" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <div class="form-input-wrap">
+          <label for="nameId">Name:</label>
+          <input type="text" ng-model="form.input0" placeholder="Name" name="Name" required="" id="nameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Name.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Age:</label>
+          <input type="number" ng-model="form.input1" placeholder="Age" name="Age" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Age.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Age.$error.required}">Age is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Password:</label>
+          <input type="password" ng-model="form.input2" placeholder="Password" name="Password" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Password.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Password.$error.required}">Password is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="drop">How many:</label>
+          <md-select ng-model="form.drop" name="Drop" id="drop" required="">
+            <md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
+          </md-select>
+          <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Drop.$error.required.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Drop.$error.required}">Pick at least one</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;form.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;form.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Password:&lt;/label&gt;
+          &lt;input type=&quot;password&quot; ng-model=&quot;form.input2&quot; placeholder=&quot;Password&quot; name=&quot;Password&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Password.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Password.$error.required}&quot;&gt;Password is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;drop&quot;&gt;How many:&lt;/label&gt;
+          &lt;md-select ng-model=&quot;form.drop&quot; name=&quot;Drop&quot; id=&quot;drop&quot; required=&quot;&quot;&gt;
+            &lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
+          &lt;/md-select&gt;
+          &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show=&quot;form.$submitted || form.Drop.$error.required.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Drop.$error.required}&quot;&gt;Pick at least one&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(form)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-4-4-2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.4.2</span
+          >Devided Form panel
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Dividing the inputs into different sub-categories using headers can make the structure more clear.</p>
 <div class="jsprewrap">
 <div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
 <div ng-show="showjs">
@@ -889,304 +1066,311 @@ $scope.reset = function(form) {
         </div>
         <div class="kss-modifier__example">
           <div class="panel form-panel material-depth-1">
-    <div class="sub-header">
-      <h2>Panel title</h2>
-      <div class="head-actions panel-menu">
-        <div tabindex=0 class="context-menu card-context">
-          <i class="mdi mdi-dots-vertical"></i>
-          <span class="context-menu-left">
-            <ul class="wfm-list">
-              <li>Menu item 1</li>
-              <li>Menu item 2</li>
-              <li>Menu item 3</li>
-            </ul>
-          </span>
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="devidedForm" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <h3>Personal information</h3>
+        <div class="form-input-wrap">
+          <label for="firstNameId">First Name:</label>
+          <input type="text" ng-model="devidedForm.input0" placeholder="Last name" name="firstName" required="" id="firstNameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.firstName.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:devidedForm.firstName.$error.required}">First name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="lastNameId">Last Name:</label>
+          <input type="text" ng-model="devidedForm.input1" placeholder="First name" name="lastName" required="" id="lastNameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.lastName.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:devidedForm.lastName.$error.required}">Last name is required</div>
+          </div>
+        </div>
+        <h3>Preferences</h3>
+        <div class="form-input-wrap">
+          <label>Pick the best one:</label>
+          <div class="wfm-radio">
+            <label>
+              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
+              <span class="wfm-radio-toggle"></span>
+              <span class="wfm-radio-label">Cake</span>
+            </label>
+          </div>
+          <div class="wfm-radio">
+            <label>
+              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
+              <span class="wfm-radio-toggle"></span>
+              <span class="wfm-radio-label">Pie</span>
+            </label>
+          </div>
+          <div class="wfm-radio">
+            <label>
+              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
+              <span class="wfm-radio-toggle"></span>
+              <span class="wfm-radio-label">Pudding</span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
-
-    <form name="form" class="wfm-form" novalidate>
-      <div class="con-row">
-        <div class="con-flex">
-          <div class="con-row">
-            <div class="con-flex">
-              <div class="form-input-wrap">
-                <label for="nameId">Name:</label>
-                <input type="text" ng-model="form.input0" placeholder="Name" name="Name" required="" id="nameId" autofocus/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Name.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Name is required</div>
-                </div>
-              </div>
-              <div class="form-input-wrap">
-                <label for="nameId">Age:</label>
-                <input type="number" ng-model="form.input1" placeholder="Age" name="Age" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Age.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Age.$error.required}">Age is required</div>
-                </div>
-              </div>
-              <div class="form-input-wrap">
-                <label for="nameId">Password:</label>
-                <input type="password" ng-model="form.input2" placeholder="Password" name="Password" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Password.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Password.$error.required}">Password is required</div>
-                </div>
-              </div>
-              <div class="form-input-wrap">
-                <label for="drop">How many:</label>
-                <md-select ng-model="form.drop" name="Drop" id="drop" required="">
-                  <md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
-                </md-select>
-                <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Drop.$error.required.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Drop.$error.required}">Pick at least one</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h2>Compact section</h2>
-          <div class="con-row">
-            <div class="con-flex">
-              <div class="form-input-wrap">
-                <label for="nameId">Some value:</label>
-                <input type="text" ng-model="form.input3" placeholder="Value" name="Value1" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Value1.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Value1.$error.required}">Required</div>
-                </div>
-              </div>
-            </div>
-            <div class="con-flex">
-              <div class="form-input-wrap">
-                <label for="nameId">Another value:</label>
-                <input type="text" ng-model="form.input4" placeholder="Value" name="Value2" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Value2.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Value2.$error.required}">Required</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="con-row">
-            <div class="con-flex">
-              <div class="form-input-wrap">
-                <label for="nameId">Yet another value:</label>
-                <input type="text" ng-model="form.input5" placeholder="Value" name="Value3" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Value3.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Value3.$error.required}">Required</div>
-                </div>
-              </div>
-            </div>
-            <div class="con-flex">
-              <div class="form-input-wrap">
-                <label for="nameId">Last value:</label>
-                <input type="text" ng-model="form.input6" placeholder="Value" name="Value4" required="" id="nameId"/>
-                <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Value4.$touched">
-                  <div class="form-input-message" ng-class="{formInvalidInput:form.Value4.$error.required}">Required</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="con-flex split-3-1">
-          <div class="form-input-wrap">
-            <label>Group:</label>
-            <div class="wfm-checkbox">
-              <input type="checkbox" ng-model="form.box1" name="Box1" id="box1" required=""/>
-              <label for="box1">
-                <span class="wfm-checkbox-toggle"></span>
-                <span class="wfm-checkbox-label">Group A</span>
-              </label>
-            </div>
-            <div class="wfm-checkbox">
-              <input type="checkbox" ng-model="form.box2" name="Box2" id="box2" required=""/>
-              <label for="box2">
-                <span class="wfm-checkbox-toggle"></span>
-                <span class="wfm-checkbox-label">Group B</span>
-              </label>
-            </div>
-          </div>
-          <div class="form-input-wrap">
-            <label>Radio group:</label>
-            <div class="wfm-radio">
-              <label>
-                <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-                <span class="wfm-radio-toggle"></span>
-                <span class="wfm-radio-label">Option1</span>
-              </label>
-            </div>
-            <div class="wfm-radio">
-              <label>
-                <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-                <span class="wfm-radio-toggle"></span>
-                <span class="wfm-radio-label">Option2</span>
-              </label>
-            </div>
-            <div class="wfm-radio">
-              <label>
-                <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-                <span class="wfm-radio-toggle"></span>
-                <span class="wfm-radio-label">Default</span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="con-footer">
-        <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
-        <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
-      </div>
-    </form>
-  </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(devidedForm)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
 
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
-    &lt;div class=&quot;sub-header&quot;&gt;
-      &lt;h2&gt;Panel title&lt;/h2&gt;
-      &lt;div class=&quot;head-actions panel-menu&quot;&gt;
-        &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
-          &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
-          &lt;span class=&quot;context-menu-left&quot;&gt;
-            &lt;ul class=&quot;wfm-list&quot;&gt;
-              &lt;li&gt;Menu item 1&lt;/li&gt;
-              &lt;li&gt;Menu item 2&lt;/li&gt;
-              &lt;li&gt;Menu item 3&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/span&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;devidedForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;h3&gt;Personal information&lt;/h3&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;firstNameId&quot;&gt;First Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input0&quot; placeholder=&quot;Last name&quot; name=&quot;firstName&quot; required=&quot;&quot; id=&quot;firstNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.firstName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.firstName.$error.required}&quot;&gt;First name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;lastNameId&quot;&gt;Last Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input1&quot; placeholder=&quot;First name&quot; name=&quot;lastName&quot; required=&quot;&quot; id=&quot;lastNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.lastName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.lastName.$error.required}&quot;&gt;Last name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h3&gt;Preferences&lt;/h3&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label&gt;Pick the best one:&lt;/label&gt;
+          &lt;div class=&quot;wfm-radio&quot;&gt;
+            &lt;label&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
+              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;wfm-radio-label&quot;&gt;Cake&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;wfm-radio&quot;&gt;
+            &lt;label&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
+              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;wfm-radio-label&quot;&gt;Pie&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;wfm-radio&quot;&gt;
+            &lt;label&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
+              &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;wfm-radio-label&quot;&gt;Pudding&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(devidedForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
 
-    &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot; novalidate&gt;
-      &lt;div class=&quot;con-row&quot;&gt;
-        &lt;div class=&quot;con-flex&quot;&gt;
-          &lt;div class=&quot;con-row&quot;&gt;
-            &lt;div class=&quot;con-flex&quot;&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
-                &lt;input type=&quot;text&quot; ng-model=&quot;form.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
-                &lt;input type=&quot;number&quot; ng-model=&quot;form.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Age.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Password:&lt;/label&gt;
-                &lt;input type=&quot;password&quot; ng-model=&quot;form.input2&quot; placeholder=&quot;Password&quot; name=&quot;Password&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Password.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Password.$error.required}&quot;&gt;Password is required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;drop&quot;&gt;How many:&lt;/label&gt;
-                &lt;md-select ng-model=&quot;form.drop&quot; name=&quot;Drop&quot; id=&quot;drop&quot; required=&quot;&quot;&gt;
-                  &lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
-                &lt;/md-select&gt;
-                &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show=&quot;form.$submitted || form.Drop.$error.required.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Drop.$error.required}&quot;&gt;Pick at least one&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;h2&gt;Compact section&lt;/h2&gt;
-          &lt;div class=&quot;con-row&quot;&gt;
-            &lt;div class=&quot;con-flex&quot;&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Some value:&lt;/label&gt;
-                &lt;input type=&quot;text&quot; ng-model=&quot;form.input3&quot; placeholder=&quot;Value&quot; name=&quot;Value1&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Value1.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Value1.$error.required}&quot;&gt;Required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;con-flex&quot;&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Another value:&lt;/label&gt;
-                &lt;input type=&quot;text&quot; ng-model=&quot;form.input4&quot; placeholder=&quot;Value&quot; name=&quot;Value2&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Value2.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Value2.$error.required}&quot;&gt;Required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;con-row&quot;&gt;
-            &lt;div class=&quot;con-flex&quot;&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Yet another value:&lt;/label&gt;
-                &lt;input type=&quot;text&quot; ng-model=&quot;form.input5&quot; placeholder=&quot;Value&quot; name=&quot;Value3&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Value3.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Value3.$error.required}&quot;&gt;Required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;con-flex&quot;&gt;
-              &lt;div class=&quot;form-input-wrap&quot;&gt;
-                &lt;label for=&quot;nameId&quot;&gt;Last value:&lt;/label&gt;
-                &lt;input type=&quot;text&quot; ng-model=&quot;form.input6&quot; placeholder=&quot;Value&quot; name=&quot;Value4&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
-                &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Value4.$touched&quot;&gt;
-                  &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Value4.$error.required}&quot;&gt;Required&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+      </section>
+      <section id="kssref-4-4-3" class="kss-section kss-section--depth-3">
 
-        &lt;div class=&quot;con-flex split-3-1&quot;&gt;
-          &lt;div class=&quot;form-input-wrap&quot;&gt;
-            &lt;label&gt;Group:&lt;/label&gt;
-            &lt;div class=&quot;wfm-checkbox&quot;&gt;
-              &lt;input type=&quot;checkbox&quot; ng-model=&quot;form.box1&quot; name=&quot;Box1&quot; id=&quot;box1&quot; required=&quot;&quot;/&gt;
-              &lt;label for=&quot;box1&quot;&gt;
-                &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group A&lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;wfm-checkbox&quot;&gt;
-              &lt;input type=&quot;checkbox&quot; ng-model=&quot;form.box2&quot; name=&quot;Box2&quot; id=&quot;box2&quot; required=&quot;&quot;/&gt;
-              &lt;label for=&quot;box2&quot;&gt;
-                &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group B&lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;form-input-wrap&quot;&gt;
-            &lt;label&gt;Radio group:&lt;/label&gt;
-            &lt;div class=&quot;wfm-radio&quot;&gt;
-              &lt;label&gt;
-                &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-                &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;wfm-radio-label&quot;&gt;Option1&lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;wfm-radio&quot;&gt;
-              &lt;label&gt;
-                &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-                &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;wfm-radio-label&quot;&gt;Option2&lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;wfm-radio&quot;&gt;
-              &lt;label&gt;
-                &lt;input type=&quot;radio&quot; name=&quot;item&quot; data-ng-model=&quot;radio&quot; data-ng-value=&quot;item&quot;&gt;
-                &lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;wfm-radio-label&quot;&gt;Default&lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">4.4.3</span
+          >Split Form panel
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.</p>
+<div class="jsprewrap">
+<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+<div ng-show="showjs">
+    <code><pre>
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+    </pre></code>
+</div>
+</div>
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="panel form-panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="splitForm" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <div class="form-input-wrap">
+          <label for="nameId">Name:</label>
+          <input type="text" ng-model="splitForm.input0" placeholder="Name" name="Name" required="" id="nameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="splitForm.$submitted || splitForm.Name.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:splitForm.Name.$error.required}">Name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Age:</label>
+          <input type="number" ng-model="splitForm.input1" placeholder="Age" name="Age" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="splitForm.$submitted || splitForm.Age.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:splitForm.Age.$error.required}">Age is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="con-flex x3">
+        <div class="form-input-wrap">
+          <label>Group:</label>
+          <div class="wfm-checkbox">
+            <input type="checkbox" ng-model="splitForm.box1" name="Box1" id="box1" required=""/>
+            <label for="box1">
+              <span class="wfm-checkbox-toggle"></span>
+              <span class="wfm-checkbox-label">Group A</span>
+            </label>
+          </div>
+          <div class="wfm-checkbox">
+            <input type="checkbox" ng-model="splitForm.box2" name="Box2" id="box2" required=""/>
+            <label for="box2">
+              <span class="wfm-checkbox-toggle"></span>
+              <span class="wfm-checkbox-label">Group B</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(splitForm)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;con-footer&quot;&gt;
-        &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(form)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
-        &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/form&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
+
+  &lt;form name=&quot;splitForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;splitForm.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;splitForm.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;con-flex x3&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label&gt;Group:&lt;/label&gt;
+          &lt;div class=&quot;wfm-checkbox&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; ng-model=&quot;splitForm.box1&quot; name=&quot;Box1&quot; id=&quot;box1&quot; required=&quot;&quot;/&gt;
+            &lt;label for=&quot;box1&quot;&gt;
+              &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group A&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;wfm-checkbox&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; ng-model=&quot;splitForm.box2&quot; name=&quot;Box2&quot; id=&quot;box2&quot; required=&quot;&quot;/&gt;
+            &lt;label for=&quot;box2&quot;&gt;
+              &lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;wfm-checkbox-label&quot;&gt;Group B&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(splitForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
       </div>
 
