@@ -167,7 +167,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "<div class=\"head-actions panel-menu\">\n" +
     "	<div tabindex=0 class=\"context-menu card-context open-right-panel\" ng-if=\"vm.panelOptions.showPopupButton\" ng-click=\"vm.panelOptions.panelState = true\">\n" +
-    "	 <i class=\"mdi mdi-chevron-double-left\"></i>\n" +
+    "	 <i class=\"mdi mdi-arrow-left-box\"></i>\n" +
     "	 <md-tooltip>{{\"ShowRightPanel\" | translate}}</md-tooltip>\n" +
     "	</div>\n" +
     "</div>\n" +
@@ -178,7 +178,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		<h2>{{vm.panelOptions.sidePanelTitle | translate}}</h2>\n" +
     "		<div class=\"head-actions panel-menu close-right-panel\" ng-click=\"vm.closePanel()\" ng-if=\"vm.panelOptions.showCloseButton\">\n" +
     "			<div tabindex=0 class=\"context-menu card-context\">\n" +
-    "				<i class=\"mdi mdi-arrow-right\"></i>\n" +
+    "				<i class=\"mdi mdi-arrow-right-box\"></i>\n" +
     "				<md-tooltip>{{\"HidePanel\" | translate}}</md-tooltip>\n" +
     "			</div>\n" +
     "		</div>\n" +
