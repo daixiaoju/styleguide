@@ -47,7 +47,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "		</div>\n" +
     "	</div>\n" +
     "\n" +
-    "	<div ng-show=\"displayPopup()\" outside-click=\"displayCalendars = false\">\n" +
+    "	<div ng-show=\"displayPopup()\">\n" +
     "		<div class=\"wfm-datepicker-controllers-container\">\n" +
     "			<div tabindex=0 class=\"context-menu card-context popup-control\" ng-click=\"displayCalendars = !displayCalendars\">\n" +
     "				<i class=\"mdi mdi-calendar\"></i>\n" +
@@ -59,7 +59,8 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "					<span class=\"pointer\">To: </span><span ng-if=\"isGregorian\" class=\"pointer\">{{ endDate | date: dateFormat }}</span><span ng-if=\"isJalaali\" class=\"pointer\">{{ endDate | persianDate:'shortDate' }}</span>\n" +
     "			</div>\n" +
     "		</div>\n" +
-    "		<div class=\"wfm-datepicker-container\" ng-show=\"displayCalendars\">\n" +
+    "		<div class=\"wfm-datepicker-container modal-box\" ng-show=\"displayCalendars\">\n" +
+    "			<div class=\"modalbg\" ng-click=\"hideDateRangePicker()\"></div>\n" +
     "			<div class=\"con-row wfm-datepicker-popup-row\">\n" +
     "				<div class=\"con-flex line-center\" ng-show=\"isGregorian\">\n" +
     "					<div class=\"wfm-datepicker-wrap date-range-start-date\">\n" +
