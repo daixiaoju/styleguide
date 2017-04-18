@@ -2405,10 +2405,11 @@ The indicator can have warning classes to show severity or a short category text
           Example
         </div>
         <div class="kss-modifier__example">
-          <label for="ChipInputId" class="input-prepend">
+          <label for="filter" class="input-icon">
  <i class="mdi mdi-filter-outline">
- <md-tooltip>Filter chips</md-tooltip></i>
- <input type="text" id="ChipInputId" ng-model="chipFilter" placeholder="Filter chips"/>
+   <input type="text" id="filter" ng-model="chipFilter" placeholder="Filter chips">
+   <md-tooltip>Filter</md-tooltip>
+ </i>
 </label>
 </br>
 <div class="wfm-chip-wrap" ng-repeat="item in sizes | filter: chipFilter">
@@ -2426,10 +2427,11 @@ The indicator can have warning classes to show severity or a short category text
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label for=&quot;ChipInputId&quot; class=&quot;input-prepend&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label for=&quot;filter&quot; class=&quot;input-icon&quot;&gt;
  &lt;i class=&quot;mdi mdi-filter-outline&quot;&gt;
- &lt;md-tooltip&gt;Filter chips&lt;/md-tooltip&gt;&lt;/i&gt;
- &lt;input type=&quot;text&quot; id=&quot;ChipInputId&quot; ng-model=&quot;chipFilter&quot; placeholder=&quot;Filter chips&quot;/&gt;
+   &lt;input type=&quot;text&quot; id=&quot;filter&quot; ng-model=&quot;chipFilter&quot; placeholder=&quot;Filter chips&quot;&gt;
+   &lt;md-tooltip&gt;Filter&lt;/md-tooltip&gt;
+ &lt;/i&gt;
 &lt;/label&gt;
 &lt;/br&gt;
 &lt;div class=&quot;wfm-chip-wrap&quot; ng-repeat=&quot;item in sizes | filter: chipFilter&quot;&gt;
