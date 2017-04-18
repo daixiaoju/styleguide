@@ -315,17 +315,17 @@ md-tooltip {
   position: fixed; }
 
 .darktheme-background {
-  background: #303030 !important; }
-  .darktheme-background p {
-    color: rgba(255, 255, 255, 0.87) !important; }
+  background: #303030 !important;
+  color: rgba(255, 255, 255, 0.87) !important; }
 
 .classictheme-background {
-  background: rgba(0, 0, 0, 0.06) !important; }
-  .classictheme-background p {
-    color: rgba(0, 0, 0, 0.87) !important; }
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: rgba(0, 0, 0, 0.87); }
 
 .swatch-list .blue-500-swatch {
   background: #0099FF !important; }
+  .swatch-list .blue-500-swatch p {
+    color: white; }
 
 .swatch-list .blue-300-swatch {
   background: #66c2ff !important; }
@@ -347,18 +347,26 @@ md-tooltip {
 
 .swatch-list .purple-300-swatch {
   background: #BA68C8 !important; }
+  .swatch-list .purple-300-swatch p {
+    color: white; }
 
 .swatch-list .purple-500-swatch {
   background: #9C27B0 !important; }
+  .swatch-list .purple-500-swatch p {
+    color: white; }
 
 .swatch-list .brown-100-swatch {
   background: #D7CCC8 !important; }
 
 .swatch-list .brown-300-swatch {
   background: #A1887F !important; }
+  .swatch-list .brown-300-swatch p {
+    color: white; }
 
 .swatch-list .brown-500-swatch {
   background: #795548 !important; }
+  .swatch-list .brown-500-swatch p {
+    color: white; }
 
 .swatch-list .teal-100-swatch {
   background: #B2DFDB !important; }
@@ -368,12 +376,18 @@ md-tooltip {
 
 .swatch-list .teal-500-swatch {
   background: #009688 !important; }
+  .swatch-list .teal-500-swatch p {
+    color: white; }
 
 .swatch-list .pink-500-swatch {
   background: #E91E63 !important; }
+  .swatch-list .pink-500-swatch p {
+    color: white; }
 
 .swatch-list .pink-300-swatch {
   background: #F06292 !important; }
+  .swatch-list .pink-300-swatch p {
+    color: white; }
 
 .swatch-list .pink-100-swatch {
   background: #F8BBD0 !important; }
@@ -389,6 +403,8 @@ md-tooltip {
 
 .swatch-list .red-800-swatch {
   background: #D32F2F !important; }
+  .swatch-list .red-800-swatch p {
+    color: white; }
 
 .swatch-list .red-700-swatch {
   background: #EF5350 !important; }
@@ -398,6 +414,8 @@ md-tooltip {
 
 .swatch-list .gray-054-swatch {
   background: rgba(0, 0, 0, 0.54) !important; }
+  .swatch-list .gray-054-swatch p {
+    color: white; }
 
 .swatch-list .gray-300-swatch {
   background: #E0E0E0 !important; }
@@ -446,27 +464,39 @@ md-tooltip {
 
 .swatch-list .purple-500-swatch-dark {
   background: #E1BEE7 !important; }
+  .swatch-list .purple-500-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .brown-100-swatch-dark {
   background: #795548 !important; }
 
 .swatch-list .brown-300-swatch-dark {
   background: #A1887F !important; }
+  .swatch-list .brown-300-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .brown-500-swatch-dark {
   background: #D7CCC8 !important; }
+  .swatch-list .brown-500-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .teal-100-swatch-dark {
   background: #009688 !important; }
 
 .swatch-list .teal-300-swatch-dark {
   background: #4DB6AC !important; }
+  .swatch-list .teal-300-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .teal-500-swatch-dark {
   background: #B2DFDB !important; }
+  .swatch-list .teal-500-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .pink-500-swatch-dark {
   background: #F8BBD0 !important; }
+  .swatch-list .pink-500-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .pink-300-swatch-dark {
   background: #F06292 !important; }
@@ -485,6 +515,8 @@ md-tooltip {
 
 .swatch-list .red-800-swatch-dark {
   background: #ee8f7d !important; }
+  .swatch-list .red-800-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .red-700-swatch-dark {
   background: #EF5350 !important; }
@@ -506,6 +538,8 @@ md-tooltip {
 
 .swatch-list .gray-087-swatch-dark {
   background: #d1d1d1 !important; }
+  .swatch-list .gray-087-swatch-dark p {
+    color: rgba(0, 0, 0, 0.87) !important; }
 
 .swatch-list .gray-100-swatch-dark {
   background: #9E9E9E !important; }
@@ -521,7 +555,7 @@ md-tooltip {
   width: 100px;
   height: 100px; }
   .swatch-list li .white-color-text {
-    color: #ffffff !important; }
+    color: #ffffff; }
   .swatch-list li p {
     left: 0;
     right: 0;
