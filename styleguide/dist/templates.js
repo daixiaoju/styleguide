@@ -145,10 +145,10 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "					<form name=\"form\" class=\"wfm-form\" novalidate>\n" +
     "						<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
     "							<div class=\"full-padding\" >\n" +
-    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{vm.searchOptions.searchFields[$index]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\"/>\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\"/>\n" +
     "							</div>\n" +
     "							<div class=\"full-padding\">\n" +
-    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{vm.searchOptions.searchFields[$index + 1]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
     "							</div>\n" +
     "						</div>\n" +
     "						<div class=\"con-footer\">\n" +
