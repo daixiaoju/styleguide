@@ -149,6 +149,12 @@
                 ><span class="kss-nav__name">Chips</span>
               </a>
             </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1-20">
+                <span class="kss-nav__ref">1.20</span
+                ><span class="kss-nav__name">Badge</span>
+              </a>
+            </li>
         </ul>
       </li>
       <li class="kss-nav__menu-item">
@@ -2462,6 +2468,63 @@ The indicator can have warning classes to show severity or a short category text
   &lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1-20" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.20</span
+          >Badge
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Badges are used to show the size of a group of items. It can show a fixed number or tick up as the user add more items to the group.
+By using colors we can indicate the status or severity of that amount.
+Badges can be applied to a number of containers as well, such as <a href="section-4.html#kssref-4-2">panels and tabs</a>.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+           <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-primary wfm-badge-wrapper">
+   <i class="mdi mdi-cake "></i>
+   <wfm-badge badge-model="1" status="'notice-info'"> </wfm-badge>
+ </a>
+ <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
+   <i class="mdi mdi-cake "></i>
+   <wfm-badge badge-model="50" status="'notice-warning'"> </wfm-badge>
+ </a>
+ <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
+   <i class="mdi mdi-cake"></i>
+   <wfm-badge badge-model="999" status="'notice-error'"> </wfm-badge>
+   <md-tooltip>Options</md-tooltip>
+ </div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;a href=&quot;#&quot; ng-click=&quot;counter = counter+1&quot; class=&quot;wfm-btn wfm-btn-primary wfm-badge-wrapper&quot;&gt;
+   &lt;i class=&quot;mdi mdi-cake &quot;&gt;&lt;/i&gt;
+   &lt;wfm-badge badge-model=&quot;1&quot; status=&quot;&#x27;notice-info&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+ &lt;/a&gt;
+ &lt;a href=&quot;#&quot; ng-click=&quot;counter = counter+1&quot; class=&quot;wfm-btn wfm-btn-default wfm-badge-wrapper&quot;&gt;
+   &lt;i class=&quot;mdi mdi-cake &quot;&gt;&lt;/i&gt;
+   &lt;wfm-badge badge-model=&quot;50&quot; status=&quot;&#x27;notice-warning&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+ &lt;/a&gt;
+ &lt;div tabindex=0 class=&quot;context-menu card-context wfm-badge-wrapper&quot;&gt;
+   &lt;i class=&quot;mdi mdi-cake&quot;&gt;&lt;/i&gt;
+   &lt;wfm-badge badge-model=&quot;999&quot; status=&quot;&#x27;notice-error&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+   &lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+ &lt;/div&gt;</code></pre>
       </div>
 
       </section>
