@@ -243,6 +243,11 @@
 
 /*Teleopti blue*/
 /*sets wfm-block*/
+.borderless {
+  border: none !important; }
+  .borderless b {
+    display: block; }
+
 html {
   overflow-y: auto !important; }
 
