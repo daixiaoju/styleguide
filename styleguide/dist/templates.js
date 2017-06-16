@@ -190,6 +190,106 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/work-hour-picker/work-hour-picker.tpl.html',
+    "<div class=\"relative working-hour-picker\">\n" +
+    "  <div class=\"con-row day-row\">\n" +
+    "    <div class=\"con-flex\">\n" +
+    "      <button tabindex=\"0\" class=\"wfm-fab mini grow-out\" ng-click=\"$ctrl.openPicker(form)\"\n" +
+    "      ng-class=\"{'mini-active': $ctrl.showSummary}\">\n" +
+    "      <i class=\"mdi\" ng-class=\"{'mdi-close':$ctrl.showSummary, 'mdi-table-large':!$ctrl.showSummary}\"></i>\n" +
+    "      <md-tooltip ng-if=\"!$ctrl.showSummary\">{{'OpenHours' | translate}}</md-tooltip>\n" +
+    "    </button>\n" +
+    "  </div>\n" +
+    "  <div class=\"con-flex line-center animate work-day\" ng-repeat=\"day in $ctrl.weekdays\" ng-show=\"$ctrl.showSummary\" ng-class=\"{'inactive-work-day':!$ctrl.showSummary}\">\n" +
+    "    <button tabindex=\"0\" class=\"wfm-fab mini\" ng-click=\"$ctrl.selectDay(day)\"\n" +
+    "    ng-class=\"{'mini-success': day.IsSelected}\">\n" +
+    "    <span style=\"text-transform:uppercase;\">{{day.Name | limitTo:1}}</span>\n" +
+    "    <md-tooltip>{{day.Name}}</md-tooltip>\n" +
+    "  </button>\n" +
+    "</div>\n" +
+    "\n" +
+    "<form ng-cloak name=\"form\" class=\"wfm-form working-hour-dropdown panel material-depth-2 animate-show\" novalidate ng-show=\"$ctrl.showSummary\">\n" +
+    "  <div class=\"sub-header\">\n" +
+    "    <h2>{{'OpenHours' | translate}}</h2>\n" +
+    "    <div class=\"head-actions panel-menu\">\n" +
+    "      <div tabindex=0 class=\"context-menu card-context grow-out\" ng-click=\"$ctrl.overNight = !$ctrl.overNight\" ng-show=\"$ctrl.selectedDays.length > 0\" ng-if=\"$ctrl.overNightSwitch\">\n" +
+    "        <i class=\"mdi\" ng-class=\"{'mdi-weather-night':$ctrl.overNight, 'mdi-weather-sunny':!$ctrl.overNight}\"></i>\n" +
+    "        <md-tooltip ng-if=\"$ctrl.overNight\">{{'OverMidnight'|translate}}</md-tooltip>\n" +
+    "        <md-tooltip ng-if=\"!$ctrl.overNight\">{{'Today'|translate}}</md-tooltip>\n" +
+    "      </div>\n" +
+    "      <div tabindex=0 class=\"context-menu card-context\" ng-click=\"$ctrl.toggleTimeFormat()\" ng-if=\"$ctrl.timeFormatSwitch\">\n" +
+    "        <i class=\"mdi\" ng-class=\"{'mdi-alarm':$ctrl.timeFormat.Meridian, 'mdi-alarm-off':!$ctrl.timeFormat.Meridian}\"></i>\n" +
+    "        <md-tooltip ng-if=\"!$ctrl.timeFormat.Meridian\">{{'FormatColon'|translate}} 24</md-tooltip>\n" +
+    "        <md-tooltip ng-if=\"$ctrl.timeFormat.Meridian\">{{'FormatColon'|translate}} 12</md-tooltip>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "  </div>\n" +
+    "  <div class=\"con-row animate-show\" ng-show=\"$ctrl.selectedDays.length > 0\">\n" +
+    "    <div class=\"con-flex\">\n" +
+    "      <div class=\"form-input-wrap\">\n" +
+    "        <label for=\"open\">{{'StartColon' | translate}}</label>\n" +
+    "        <div uib-timepicker ng-model=\"form.openHour\" name=\"open\" id=\"open\" show-meridian=\"$ctrl.timeFormat.Meridian\" required=\"\"></div>\n" +
+    "        <div ng-cloak class=\"animate-input-message\" ng-show=\"form.$submitted || form.open.$error.required.$touched\">\n" +
+    "          <div class=\"form-input-message\" ng-class=\"{formInvalidInput:form.$invalid}\">{{$ctrl.errorMessage}}</div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"con-flex\">\n" +
+    "      <div class=\"form-input-wrap\">\n" +
+    "        <label for=\"close\">{{'EndColon'|translate}}</label>\n" +
+    "        <div uib-timepicker ng-model=\"form.closeHour\" name=\"close\" id=\"close\" show-meridian=\"$ctrl.timeFormat.Meridian\" required=\"\"></div>\n" +
+    "        <div ng-cloak class=\"animate-input-message\" ng-show=\"form.$submitted || form.close.$error.required.$touched\">\n" +
+    "          <div class=\"form-input-message\" ng-class=\"{formInvalidInput:form.$invalid}\">{{$ctrl.errorMessage}}</div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"con-row animate-show\" ng-show=\"$ctrl.showSummary\">\n" +
+    "    <div class=\"con-flex\">\n" +
+    "      <table class=\"wfm-table\">\n" +
+    "        <thead>\n" +
+    "          <tr>\n" +
+    "            <th>{{'Day'|translate}}</th>\n" +
+    "            <th>{{'Start' | translate}}</th>\n" +
+    "            <th>{{'End' | translate}}</th>\n" +
+    "            <th>{{'Clear' | translate}}</th>\n" +
+    "          </tr>\n" +
+    "        </thead>\n" +
+    "        <tbody>\n" +
+    "          <tr ng-repeat=\"day in $ctrl.weekdays\">\n" +
+    "            <td>\n" +
+    "              {{day.Name}}\n" +
+    "              <i class=\"mdi pull-right\" ng-class=\"{'mdi-weather-night':day.OverNight == true, 'mdi-weather-sunny':day.OverNight == false}\" ng-if=\"$ctrl.overNightSwitch\">\n" +
+    "                <md-tooltip ng-if=\"day.OverNight\">{{'OverNight'|translate}}</md-tooltip>\n" +
+    "                <md-tooltip ng-if=\"!day.OverNight\">{{'Today'|translate}}</md-tooltip>\n" +
+    "              </i>\n" +
+    "            </td>\n" +
+    "            <td class=\"number-cell\">{{day.OpenHour | date: $ctrl.timeFormat.Format}}</td>\n" +
+    "            <td class=\"number-cell\">{{day.CloseHour | date: $ctrl.timeFormat.Format}}</td>\n" +
+    "            <td class=\"line-center\">\n" +
+    "              <i class=\"mdi mdi-delete pointer\" ng-click=\"$ctrl.clearDay(day);\"></i>\n" +
+    "            </td>\n" +
+    "          </tr>\n" +
+    "        </tbody>\n" +
+    "      </table>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"panel\">\n" +
+    "    <div class=\"con-footer animate-show\" ng-show=\"$ctrl.selectedDays.length > 0\">\n" +
+    "      <button class=\"wfm-btn wfm-btn-invis-default\" type=\"submit\" ng-click=\"$ctrl.saveHours(form)\">{{'Apply'|translate}}</button>\n" +
+    "      <button class=\"wfm-btn wfm-btn-invis-primary\" type=\"submit\" ng-click=\"$ctrl.saveAndClose(form)\"><md-tooltip>{{'SaveClose'|translate}}</md-tooltip>{{'Save'|translate}}</button>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "</form>\n" +
+    "</div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/workinghourspicker/working-hours-picker.tpl.html',
     "<div class=\"con-row\">\n" +
     "	<div><!--No need for a con-flex here, its in the directive-->\n" +
