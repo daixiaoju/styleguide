@@ -1,6 +1,11 @@
 angular.module('styleguide.templates', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('directives/badge/badge.tpl.html',
+    "<span class=\"wfm-badge material-depth-1 grow-out\" ng-class=\"$ctrl.status\"  ng-if=\"$ctrl.badgeModel>0\">{{$ctrl.badgeModel}}</span>\n"
+  );
+
+
   $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div class=\"wfm-date-range-picker\">\n" +
     "	<div ng-show=\"!displayPopup()\">\n" +
