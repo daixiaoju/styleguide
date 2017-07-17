@@ -132,8 +132,17 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   $templateCache.put('directives/wfm-multiple-search/wfm-multiple-search-input.tpl.html',
     "<div class=\"wfm-multiple-search-wrapper\">\n" +
     "	<input id=\"advanced-search\" class=\"advanced-input\" type=\"text\" placeholder=\"{{vm.title}}\" ng-class=\"{'expand-advanced-input': vm.showAdvancedSearchOption}\"\n" +
-    "	ng-model=\"vm.searchOptions.keyword\" ng-keyup=\"vm.searchTextInputKeyup($event)\" ng-focus=\"vm.openAdvancedSearchOption($event)\" ng-change=\"vm.searchTextChange()\" ng-click=\"vm.openAdvancedSearchOption($event)\" keyword-format/>\n" +
+    "	ng-model=\"vm.searchOptions.keyword\" ng-keydown=\"$event.which === 13 && vm.resetFocusSearch() && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()\" ng-change=\"vm.validateSearchKeywordChanged()\"\n" +
+    "	ng-click=\"vm.toggleAdvancedSearchOption($event)\" keyword-format/>\n" +
+    "	\n" +
+    "	<span class=\"cursor-pointer search-icon\" ng-click=\"vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()\">\n" +
+    "		<i class=\"mdi mdi-magnify\" ng-class=\"{'focusing-search': vm.searchOptions.focusingSearch}\"></i>\n" +
+    "		<md-tooltip>{{'Search' | translate}}</md-tooltip>\n" +
+    "	</span>\n" +
+    "\n" +
     "	<div class=\"advanced-input-dropdown\" ng-cloak ng-if=\"vm.showAdvancedSearchOption\" outside-click=\"vm.turnOffAdvancedSearch();\">\n" +
+    "		<div class=\"con-row\">\n" +
+    "			<div class=\"con-flex\">\n" +
     "				<div class=\"panel material-depth-1\">\n" +
     "					<div class=\"sub-header\">\n" +
     "						<h2>{{ 'Search' | translate }}</h2>\n" +
@@ -141,10 +150,10 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "					<form name=\"form\" class=\"wfm-form\" novalidate>\n" +
     "						<div class=\"con-row\" ng-repeat=\"searchField in vm.searchOptions.searchFields\" ng-if=\"$even\">\n" +
     "							<div class=\"full-padding\" >\n" +
-    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\" class=\"con-flex\" type=\"text\" ng-keyup=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\"/>\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index]\" id=\"criteria-{{vm.searchOptions.searchFields[$index]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]\"/>\n" +
     "							</div>\n" +
     "							<div class=\"full-padding\">\n" +
-    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\" class=\"con-flex\" type=\"text\" ng-keyup=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
+    "								<input autocomplete=\"off\" ng-if=\"vm.searchOptions.searchFields[$index + 1]\" id=\"criteria-{{vm.searchOptions.searchFields[$index + 1]}}\" class=\"con-flex\" type=\"text\" ng-keydown=\"$event.which === 13 && vm.advancedSearch()\" placeholder=\"{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}\" ng-model=\"vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]\" />\n" +
     "							</div>\n" +
     "						</div>\n" +
     "						<div class=\"con-footer\">\n" +
@@ -152,13 +161,8 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "						</div>\n" +
     "					</form>\n" +
     "				</div>\n" +
-    "	</div>\n" +
-    "\n" +
-    "	<div class=\"search-button\">\n" +
-    "		<span class=\"cursor-pointer search-icon\" ng-focus=\"vm.turnOffAdvancedSearch()\" ng-click=\"vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()\">\n" +
-    "			<i class=\"mdi mdi-magnify\" ng-class=\"{'focusing-search': vm.searchOptions.focusingSearch}\"></i>\n" +
-    "			<md-tooltip>{{'Search' | translate}}</md-tooltip>\n" +
-    "		</span>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
     "	</div>\n" +
     "</div>"
   );
