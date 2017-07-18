@@ -6,6 +6,16 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
   );
 
 
+  $templateCache.put('directives/cultural-datepicker/cultural-datepicker.tpl.html',
+    "<div ng-if=\"isJalaali\" class=\"wfm-datepicker-wrap\" style=\"display:inline-block; min-height:290px;\">\n" +
+    "  <persian-datepicker ng-model=\"dt\" show-weeks=\"true\" class=\"wfm-datepicker\"></persian-datepicker>\n" +
+    "</div>\n" +
+    "<div ng-if=\"isGregorian\" class=\"wfm-datepicker-wrap\" style=\"display:inline-block; min-height:290px;\">\n" +
+    "  <div uib-datepicker show-weeks=\"true\" ng-model=\"dt\" class=\"wfm-datepicker\"></div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div class=\"wfm-date-range-picker\">\n" +
     "	<div ng-show=\"!displayPopup()\">\n" +

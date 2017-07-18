@@ -176,7 +176,22 @@
 
       <div class="kss-description">
         <p>The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.</p>
-
+<form>
+    <div class="wfm-radio">
+        <input type="radio" name="group1" id="radio1" ng-model="select" value="en-GB" ng-change='newValue(select)'/>
+        <label for="radio1">
+            <span class="wfm-radio-toggle"></span>
+            <span class="wfm-radio-label">Gregorian</span>
+        </label>
+    </div>
+    <div class="wfm-radio">
+        <input type="radio" name="group1" id="radio2" ng-model="select" value="fa-IR" ng-change='newValue(select)'/>
+        <label for="radio2">
+            <span class="wfm-radio-toggle"></span>
+            <span class="wfm-radio-label">Jalaali</span>
+        </label>
+    </div>
+</form>
       </div>
     </div>
 
@@ -185,12 +200,12 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <wfm-cultural-datepicker ng-model='dateForDatepicker' datepicker-options='datepickerOptions'></wfm-cultural-datepicker>
+          <wfm-cultural-datepicker ng-model='dateForDatepicker'></wfm-cultural-datepicker>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-cultural-datepicker ng-model=&#x27;dateForDatepicker&#x27; datepicker-options=&#x27;datepickerOptions&#x27;&gt;&lt;/wfm-cultural-datepicker&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;wfm-cultural-datepicker ng-model=&#x27;dateForDatepicker&#x27;&gt;&lt;/wfm-cultural-datepicker&gt;</code></pre>
       </div>
 
       </section>
