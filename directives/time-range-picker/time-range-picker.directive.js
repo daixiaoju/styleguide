@@ -19,7 +19,8 @@
             controller: ['$scope', '$element', timeRangePickerCtrl],
             require: ['ngModel', 'timeRangePicker'],
             transclude: true,
-            link: postlink
+            link: postlink,
+            
         };
 
         function timeRangePickerCtrl($scope, $element) {
